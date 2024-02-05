@@ -137,3 +137,4 @@ STATICFILES_DIRS = [
 
 
 # tag to remove  comment collectstatic
+# python3 manage.py collectstatic
