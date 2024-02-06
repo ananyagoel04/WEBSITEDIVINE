@@ -6,3 +6,5 @@ def logo(request):
     return render (request,"logo.html")
 def parent(request):
     return render (request,"parent.html")
+def about(request):
+    return render (request,"About.html")

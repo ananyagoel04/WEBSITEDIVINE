@@ -23,5 +23,6 @@ urlpatterns = [
     path('', views.home),
     path('logo/', views.logo),
     path('parent/', views.parent),
+    path('about/', views.about),
 
 ]
