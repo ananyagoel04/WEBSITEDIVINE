@@ -1,0 +1,121 @@
+{% load static %}
+<head>
+    <style>
+        .background{
+            background-color: #FFFFFF;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+
+<body>
+    {% include "header.html" %}
+
+
+    <div class="md:flex p-10 bg-gradient-to-b from-white via-[#f3f0fc] via-70% to-white">
+        <div class="block p-6 md:w-2/4 mx-auto my-auto ">
+            <div class="md:flex hidden justify-end">
+                <img src="{% static 'icons/arrowbig.svg' %}" class="lg:w-36 md:w-24 top-10 relative rotate-[8deg]" alt="">
+            </div>
+            <div
+                class="bg-[#D2C6FA] rounded-3xl w-fit my-4 p-2 text-center text-[#201042] font-semibold rotate-[-1deg] mx-auto md:mx-0">
+                Now enrolling for preschool
+            </div>
+            <div class="font-extrabold text-6xl md:text-left text-center">Stay in the loop
+            </div>
+            <div class="font-medium leading-8 md:text-left text-center">Sed porttitor lectus nibh. Cras ultricies
+                ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non
+                nisi.
+            </div>
+            <div class="font-bold text-center md:text-left">Not enrolled in our school?</div>
+            <div class="md:flex py-4 justify-center md:justify-start w-fit mx-auto md:mx-0">
+                <div
+                    class="bg-[#F6C663] hover:bg-[#F9BC3E] flex rounded-full text-center text-xl px-4 py-2 md:my-0 my-4 animation-arrow mx-auto">
+                    <div>Enroll Today</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="my-auto mx-auto">
+                        <path d="M5 12l14 0"></path>
+                        <path d="M15 16l4 -4"></path>
+                        <path d="M15 8l4 4"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="md:w-2/4 my-auto md:relative">
+            <div class="flex justify-end relative -mb-64 z-0 overflow-hidden md:mr-0 md:top-0 -top-16 -mr-10 "><img src="/static/icons/dotedlines.svg" class="h-72 object-cover rotate-90" alt=""></div>
+            
+            <div class=" xl:w-3/4 mx-auto block md:grid grid-rows-6 grid-flow-col gap-4 z-10 relative">
+                <div class="bg-[#EAE1FC] row-span-2 my-4 rounded-xl p-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="dHctdy0xMA dHctaC0xMA dHctdGV4dC1wdXJwbGUtNzAw"><path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10"></path><path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2"></path></svg>
+                    <h1>asdafas</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, exercitationem.</p>
+                    <div></div>
+                </div>
+                <div class="bg-[#FFEBEC] row-span-2 my-4 rounded-xl p-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="dHctdy0xMA dHctaC0xMA dHctdGV4dC1wdXJwbGUtNzAw"><path d="M3.5 5.5l1.5 1.5l2.5 -2.5"></path><path d="M3.5 11.5l1.5 1.5l2.5 -2.5"></path><path d="M3.5 17.5l1.5 1.5l2.5 -2.5"></path><path d="M11 6l9 0"></path><path d="M11 12l9 0"></path><path d="M11 18l9 0"></path></svg>
+                    <h1>asdafas</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, exercitationem.</p>
+                    <div></div>
+                </div>
+                <div class="bg-[#E9F2FF] row-span-2 my-4 rounded-xl p-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="dHctdy0xMA dHctaC0xMA dHctdGV4dC1wdXJwbGUtNzAw"><path d="M13.62 8.382l1.966 -1.967a2 2 0 1 1 3.414 -1.415a2 2 0 1 1 -1.413 3.414l-1.82 1.821"></path><path d="M5.904 18.596c2.733 2.734 5.9 4 7.07 2.829c1.172 -1.172 -.094 -4.338 -2.828 -7.071c-2.733 -2.734 -5.9 -4 -7.07 -2.829c-1.172 1.172 .094 4.338 2.828 7.071z"></path><path d="M7.5 16l1 1"></path><path d="M12.975 21.425c3.905 -3.906 4.855 -9.288 2.121 -12.021c-2.733 -2.734 -8.115 -1.784 -12.02 2.121"></path></svg>
+                    <h1>asdafas</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, exercitationem.</p>
+                    <div></div>
+                </div>
+                <div></div>
+                <div class="bg-[#EAFDF7] row-span-2 my-4 rounded-xl p-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="dHctdy0xMA dHctaC0xMA dHctdGV4dC1wdXJwbGUtNzAw"><path d="M12 12m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"></path><path d="M12 7v-4"></path><path d="M11 3h2"></path><path d="M15.536 8.464l2.828 -2.828"></path><path d="M17.657 4.929l1.414 1.414"></path><path d="M17 12h4"></path><path d="M21 11v2"></path><path d="M15.535 15.536l2.829 2.828"></path><path d="M19.071 17.657l-1.414 1.414"></path><path d="M12 17v4"></path><path d="M13 21h-2"></path><path d="M8.465 15.536l-2.829 2.828"></path><path d="M6.343 19.071l-1.413 -1.414"></path><path d="M7 12h-4"></path><path d="M3 13v-2"></path><path d="M8.464 8.464l-2.828 -2.828"></path><path d="M4.929 6.343l1.414 -1.413"></path></svg>
+                    <h1>asdafas</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, exercitationem.</p>
+                    <div></div>
+                </div>
+                <div class="bg-[#FDEECD] row-span-2 my-4 rounded-xl p-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="dHctdy0xMA dHctaC0xMA dHctdGV4dC1wdXJwbGUtNzAw"><path d="M15 8h.01"></path><path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z"></path><path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5"></path><path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3"></path></svg>
+                    <h1>asdafas</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, exercitationem.</p>
+                    <div></div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="text-4xl text-center">Up Comming Events Dynamically</div>
+        <p></p>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+
+    <div class="text-4xl text-center mt-20">
+        NEWS LETTER WILL BE ADDED HERE
+    </div>
+
+
+
+
+    {% include "logo.html" %}
+
+
+
+
+
+
+
+    {% include "footer.html" %}
+
+    <script src="/static/javascript/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+
+</html>

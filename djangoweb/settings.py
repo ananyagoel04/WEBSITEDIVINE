@@ -23,13 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get("SECRET_KEY")#comment collectstatic
+SECRET_KEY = os.environ.get("SECRET_KEY","django-insecure-%(nl+y6lqvagxcj2qsgfl&1e%#xtrgrp8%vik*^am9j65g)l!1")#comment collectstatic
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "Fasle").lower() == "true"#comment collectstatic
+DEBUG = os.environ.get("DEBUG", "True").lower() == "true" # comment collectstatic
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")#comment collectstatic
 
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ") #comment collectstatic
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -84,9 +85,14 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get("DATABASE_URL")#comment collectstatic
 
-DATABASES["default"] = dj_database_url.parse(database_url) #comment collectstatic
+if 'DATABASE_URL' in os.environ:
+    # Production configuration using dj_database_url
+    database_url = os.environ.get("DATABASE_URL")#comment collectstatic
+    DATABASES["default"] = dj_database_url.parse(database_url) #comment collectstatic
+else:
+    # Local development configuration
+    DATABASES["default"] = dj_database_url.parse("postgres://database_a13g_user:tottQTAeLag5oyeePRdUTdciEkOlu8mt@dpg-cn06k5ed3nmc7389khf0-a.oregon-postgres.render.com/database_a13g")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

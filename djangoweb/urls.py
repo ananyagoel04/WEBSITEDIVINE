@@ -21,4 +21,7 @@ from djangoweb import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
+    path('logo/', views.logo),
+    path('parent/', views.parent),
+
 ]
