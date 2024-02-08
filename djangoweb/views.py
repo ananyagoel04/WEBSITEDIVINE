@@ -8,3 +8,5 @@ def parent(request):
     return render (request,"parent.html")
 def about(request):
     return render (request,"About.html")
+def contact(request):
+    return render (request,"contactus.html")
