@@ -1,0 +1,129 @@
+{% load static %}
+{% include "header.html" %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="bg-gray-100 p-4">
+
+    <div class="mb-4 flex justify-center">
+        <button class="p-1 rounded-full px-4 bg-white mr-2" onclick="filterGallery('all')">All</button>
+        <button class="p-1 rounded-full px-4 bg-white mr-2" onclick="filterGallery('nature')">Nature</button>
+        <button class="p-1 rounded-full px-4 bg-white mr-2"
+            onclick="filterGallery('architecture')">Architecture</button>
+        <!-- Add more buttons for other categories as needed -->
+    </div>
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery">
+        <!-- Replace the following URLs with your actual image URLs -->
+        <div class="bg-white gallery-item aspect-1 nature rounded-md overflow-hidden shadow-md">
+            <img onclick="openModal1('modal', 'https://image.freepik.com/free-photo/cute-girls-oin-studio_1157-18211.jpg')"
+                src="https://image.freepik.com/free-photo/cute-girls-oin-studio_1157-18211.jpg" alt="Image 1"
+                class="w-fit h-fit object-cover hover:opacity-40">
+        </div>
+        <div class="bg-white gallery-item aspect-1 nature rounded-md overflow-hidden shadow-md">
+            <img onclick="openModal1('modal', 'https://image.freepik.com/free-photo/stylish-young-woman-with-bags-taking-selfie_23-2147962203.jpg')"
+                src="https://image.freepik.com/free-photo/stylish-young-woman-with-bags-taking-selfie_23-2147962203.jpg"
+                alt="Image 2" class="w-fit h-fit object-cover hover:opacity-40">
+        </div>
+        <div class="bg-white gallery-item aspect-1 architecture rounded-md overflow-hidden shadow-md">
+            <img onclick="openModal1('modal', 'https://image.freepik.com/free-photo/pretty-girl-near-car_1157-16962.jpg')"
+                src="https://image.freepik.com/free-photo/pretty-girl-near-car_1157-16962.jpg" alt="Image 3"
+                class="w-fit h-fit object-cover hover:opacity-40">
+        </div>
+        <!-- Add more image divs as needed -->
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div id="modal"
+        class="modal hidden fixed inset-0 bg-black bg-opacity-50 w-full h-full flex justify-center items-center">
+
+        <!-- Modal Header -->
+        <div class="absolute top-0 p-2 z-50 bg-black w-screen">
+            <h2 class="text-xl text-white absolute left-0 px-4 font-bold text-center">Image Slideshow</h2>
+            <button class="absolute top-0 z-50 right-0 p-2 px-4 text-white"
+                onclick="closeModal1('modal')">&times;</button>
+
+        </div>
+
+        <div
+            class="modal-content px-4 py-10 pt-12 rounded-md shadow-md flex flex-col items-center relative bg-black w-screen h-screen overflow-hidden">
+            <!-- Slideshow content -->
+            <div class="relative w-auto h-auto flex-grow overflow-hidden">
+                <img id="modalImage" alt="Modal Image" class="w-full h-full object-contain rounded-md">
+            </div>
+        </div>
+        <!-- Navigation buttons -->
+        <button class="absolute top-1/2 z-50 left-4 transform -translate-y-1/2 p-2 bg-gray-800 text-white rounded-lg"
+            onclick="prevSlide1()">&lt;</button>
+        <button class="absolute top-1/2 z-50 right-4 transform -translate-y-1/2 p-2 bg-gray-800 text-white rounded-lg"
+            onclick="nextSlide1()">&gt;</button>
+
+
+        <!-- Modal Footer -->
+        <div class="absolute bottom-0 p-2 bg-black w-full">
+            <p class="text-sm text-white text-center">Footer</p>
+        </div>
+    </div>
+
+    <script>
+        function filterGallery(category) {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script>
+        const images = ['https://image.freepik.com/free-photo/cute-girls-oin-studio_1157-18211.jpg',
+            'https://image.freepik.com/free-photo/stylish-young-woman-with-bags-taking-selfie_23-2147962203.jpg',
+            'https://image.freepik.com/free-photo/pretty-girl-near-car_1157-16962.jpg']; // Add more image URLs as needed
+        let currentImageIndex = 0;
+
+        function openModal1(modalId, imageUrl) {
+            currentImageIndex = images.indexOf(imageUrl);
+            showImage1();
+            document.getElementById(modalId).classList.remove('hidden');
+            document.getElementById(modalId).classList.add('flex');
+        }
+
+        function closeModal1(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        function showImage1() {
+            const imageUrl = images[currentImageIndex];
+            document.getElementById('modalImage').src = imageUrl;
+        }
+
+        function nextSlide1() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage1();
+        }
+
+        function prevSlide1() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage1();
+        }
+    </script>
+
+{% include "logo.html" %}
+
+
+
+{% include "Footer.html" %}
+
+</body>
+
+</html>

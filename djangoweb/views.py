@@ -10,3 +10,5 @@ def about(request):
     return render (request,"About.html")
 def contact(request):
     return render (request,"contactus.html")
+def gallery(request):
+    return render (request,"gallery.html")
