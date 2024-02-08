@@ -835,10 +835,6 @@ video {
   width: 5rem;
 }
 
-.w-3\/6 {
-  width: 50%;
-}
-
 .w-36 {
   width: 9rem;
 }
@@ -875,6 +871,10 @@ video {
   width: 2rem;
 }
 
+.w-8\/12 {
+  width: 66.666667%;
+}
+
 .w-80 {
   width: 20rem;
 }
@@ -898,10 +898,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-24 {
-  width: 6rem;
 }
 
 .max-w-full {
@@ -1315,11 +1311,6 @@ video {
   padding-right: 0.75rem;
 }
 
-.px-32 {
-  padding-left: 8rem;
-  padding-right: 8rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1353,21 +1344,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.px-56 {
-  padding-left: 14rem;
-  padding-right: 14rem;
-}
-
-.px-3\.5 {
-  padding-left: 0.875rem;
-  padding-right: 0.875rem;
 }
 
 .pb-0 {
@@ -1755,10 +1731,6 @@ video {
     width: 33.333333%;
   }
 
-  .md\:w-1\/6 {
-    width: 16.666667%;
-  }
-
   .md\:w-10\/12 {
     width: 83.333333%;
   }
@@ -1783,6 +1755,10 @@ video {
     width: 75%;
   }
 
+  .md\:w-3\/6 {
+    width: 50%;
+  }
+
   .md\:w-4\/12 {
     width: 33.333333%;
   }
@@ -1794,26 +1770,6 @@ video {
   .md\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
-  }
-
-  .md\:w-96 {
-    width: 24rem;
-  }
-
-  .md\:w-8 {
-    width: 2rem;
-  }
-
-  .md\:w-80 {
-    width: 20rem;
-  }
-
-  .md\:w-0 {
-    width: 0px;
-  }
-
-  .md\:w-60 {
-    width: 15rem;
   }
 
   .md\:grid-cols-3 {
@@ -1860,6 +1816,11 @@ video {
     padding-right: 1rem;
   }
 
+  .md\:px-40 {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
   .md\:px-44 {
     padding-left: 11rem;
     padding-right: 11rem;
@@ -1868,11 +1829,6 @@ video {
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-
-  .md\:px-80 {
-    padding-left: 20rem;
-    padding-right: 20rem;
   }
 
   .md\:py-2 {
@@ -1961,6 +1917,11 @@ video {
   .lg\:px-60 {
     padding-left: 15rem;
     padding-right: 15rem;
+  }
+
+  .lg\:px-96 {
+    padding-left: 24rem;
+    padding-right: 24rem;
   }
 
   .lg\:py-0 {

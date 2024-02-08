@@ -1872,10 +1872,6 @@ video {
     width: 50%;
   }
 
-  .lg\:w-1\/4 {
-    width: 25%;
-  }
-
   .lg\:w-10\/12 {
     width: 83.333333%;
   }
@@ -1894,10 +1890,6 @@ video {
 
   .lg\:w-56 {
     width: 14rem;
-  }
-
-  .lg\:w-2\/4 {
-    width: 50%;
   }
 
   .lg\:grid-cols-4 {
