@@ -3,6 +3,10 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Gochi Hand" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+
+
     <style>
         .background{
             background-color: #f3f0fc;
@@ -21,33 +25,50 @@
             risus viverra adipiscing at in.
         </div>
     </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Image 1 -->
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 1" class="w-full h-auto rounded-md">
+        </div>
+    
+        <!-- Image 2 -->
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 2" class="w-full h-auto rounded-md">
+        </div>
+    
+        <!-- Image 3 -->
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+        </div>
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+        </div>
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+        </div>
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+        </div>
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+        </div>
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+        </div>
+        <div class="flex justify-center items-center">
+          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+        </div>
+    
+        <!-- Add more images as needed -->
+    
+      </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 bg-[#f3f0fc]">
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="" />
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="" />
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="" />
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="" />
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="" />
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="" />
-        </div>
-    </div>
+
+
+
+
+
+
     <div class="bg-[#f3f0fc] xl:px-64 px-10 justify-start text-2xl">
         <p class="p-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -75,12 +96,12 @@
 
     <div class="block">
         <div>
-            <h1 class="text-center md:text-6xl text-3xl md:px-80 px-32 font-bold relative">
+            <h1 class="text-center md:text-6xl text-3xl font-bold relative">
                 A place for every child to learn and grow
             </h1>
         </div>
         <div>
-            <img src="/static/icons/line2.svg" class="mx-auto md:w-1/4 w-3/6 -mt-2" alt="" />
+            <img src="{% static 'icons/line2.svg' %}" class="mx-auto md:w-56 w-3/6 -mt-2" alt="" />
         </div>
     </div>
 
