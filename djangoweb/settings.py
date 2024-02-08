@@ -30,11 +30,12 @@ DEBUG = os.environ.get("DEBUG", "True").lower() == "true" # comment collectstati
 
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ") #comment collectstatic
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 # Application definition
 
 INSTALLED_APPS = [
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

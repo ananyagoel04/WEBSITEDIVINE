@@ -15,10 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from djangoweb import views
 
+admin.site.site_header ="DIVINE WISDOM"
+admin.site.site_title = "DWS-COMMITTED TO EXCELLENCE IN EDUCATION"
+admin.site.index_title = "Welcome to DWS Admin panel"
+
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('', views.home),
     path('parent/', views.parent),
