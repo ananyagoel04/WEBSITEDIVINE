@@ -20,7 +20,7 @@ from djangoweb import views
 
 admin.site.site_header ="DIVINE WISDOM"
 admin.site.site_title = "DWS-COMMITTED TO EXCELLENCE IN EDUCATION"
-admin.site.index_title = "Welcome to DWS Admin panel"
+admin.site.index_title = "Divine Wisdom Admin Panel"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
