@@ -23,7 +23,6 @@ admin.site.site_title = "DWS-COMMITTED TO EXCELLENCE IN EDUCATION"
 admin.site.index_title = "Welcome to DWS Admin panel"
 
 urlpatterns = [
-    path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('', views.home),
     path('parent/', views.parent),

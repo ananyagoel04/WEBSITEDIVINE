@@ -1,7 +1,6 @@
 asgiref==3.7.2
 dj-database-url==2.1.0
 Django==5.0.1
-django-4-jet==1.0.9
 django-browser-reload==1.12.1
 django-tailwind==3.8.0
 django-tinymce==3.6.1
