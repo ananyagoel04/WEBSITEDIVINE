@@ -1,12 +1,13 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DWS - COMMITTED TO EXCELLENCE IN EDUCATION</title>
     <link rel="icon" href="{% static 'icons/logo.png' %}" type="image/x-icon">
     <!-- <link rel="shortcut icon" href="{% static 'icons/logo.png' %}" type="image/x-icon"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'icons/logo.png' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/style1.css' %}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -54,8 +55,9 @@
                             </svg></span>
                         <div class="flex-1 px-4">
                             <div class="font-bold text-center">Email</div>
-                            <a href=""
-                                    class="hover:text-red-600 text-decoration-none"><div class="text-center">info@divinewisdomschool.in</div></a>
+                            <a href="" class="hover:text-red-600 text-decoration-none">
+                                <div class="text-center">info@divinewisdomschool.in</div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +77,9 @@
                             <div class="font-bold text-center">Phone</div>
                             <div class="text-center">
                                 <a href=""
-                                    class="hover:text-red-600 text-decoration-none"><span>9805347187</span></a><span>,</span>&nbsp;<a href="" class="hover:text-red-600 text-decoration-none"><span>1704298187</span></a></div>
+                                    class="hover:text-red-600 text-decoration-none"><span>9805347187</span></a><span>,</span>&nbsp;<a
+                                    href="" class="hover:text-red-600 text-decoration-none"><span>1704298187</span></a>
+                            </div>
                         </div>
                     </div>
 
@@ -152,42 +156,50 @@
                                 <!-- Your existing button content -->
                                 <div class="flex">Programs
                                     <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="mt-0.5">
-                                <path d="M6 9l6 6l6 -6"></path>
-                            </svg>
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" class="mt-0.5">
+                                        <path d="M6 9l6 6l6 -6"></path>
+                                    </svg>
                                 </div>
                                 <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2" id="myElement"
                                     data-collapse-toggle="myElement"></div>
                             </button>
-                            <div id="dropdownContent" class="hidden mx-auto top-0 w-full left-0 z-20 bg-[#D2C6FA] rounded-xl mt-2 ">
+                            <div id="dropdownContent"
+                                class="hidden mx-auto top-0 w-full left-0 z-20 bg-[#D2C6FA] rounded-xl mt-2 ">
                                 <!-- Your dropdown items -->
-                                <ul class="py-2 text-sm text-gray-700 text-center" aria-labelledby="dropdownDefaultButton">
+                                <ul class="py-2 text-sm text-gray-700 text-center"
+                                    aria-labelledby="dropdownDefaultButton">
                                     <li>
-                                        <a href="www.google.com" class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
+                                        <a href="www.google.com"
+                                            class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
                                             <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
-                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                elit.
                                                 Fugiat, praesentium.</div>
                                         </a>
                                     </li>
                                     <hr class="w-[90%] mx-auto my-2">
                                     <li>
-                                        <a href="www.google.com" class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
+                                        <a href="www.google.com"
+                                            class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
                                             <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
-                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                elit.
                                                 Fugiat, praesentium.</div>
                                         </a>
                                     </li>
                                     <hr class="w-[90%] mx-auto my-2">
                                     <li>
-                                        <a href="www.google.com" class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
+                                        <a href="www.google.com"
+                                            class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
                                             <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
-                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                elit.
                                                 Fugiat, praesentium.</div>
                                         </a>
                                     </li>
                                 </ul>
-                                    <!-- Add more items as needed -->
+                                <!-- Add more items as needed -->
                             </div>
 
 
@@ -234,12 +246,12 @@
 
                         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="flex" type="button">
                             <div class="flex"><span class="home">Programs</span>
-                            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="mt-0.5">
-                                <path d="M6 9l6 6l6 -6"></path>
-                            </svg>
-                        </div>
+                                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="mt-0.5">
+                                    <path d="M6 9l6 6l6 -6"></path>
+                                </svg>
+                            </div>
                         </button>
                         <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
 
