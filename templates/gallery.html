@@ -106,7 +106,8 @@
         class="modal hidden fixed inset-0 bg-black bg-opacity-50 w-full h-full flex justify-center z-50 items-center">
         <!-- Modal Header -->
         <div class="absolute top-0 p-2 z-50 bg-black w-screen">
-            <h2 class="text-xl text-white absolute left-0 px-4 font-semibold     text-center">Image Slideshow</h2>
+            <h2 class="text-xl text-white absolute left-0 px-4 font-semibold text-center" id="imageSlideshowTitle">Image
+                Slideshow</h2>
             <button class="absolute top-0 z-50 right-0 p-2 px-4 text-white" onclick="closeModal('modal1')">
                 <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -159,7 +160,7 @@
         </button>
         <!-- Modal Footer -->
         <div class="absolute bottom-0 p-2 bg-black w-full">
-            <p class="text-2xl font-medium text-white text-center">Footer</p>
+            <p class="text-2xl font-medium text-white text-center" id="imageFooter">Footer</p>
         </div>
     </div>
 
@@ -174,6 +175,14 @@
             'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-04.47c2cdb8.jpg',
             'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-05.902d322c.jpg',
             'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-06.06cb4710.jpg',]; // Add more image URLs as needed
+        const titles1 = [
+            'Gallery Hero 01',
+            'Gallery Hero 02',
+            'Gallery Hero 03',
+            'Gallery Hero 04',
+            'Gallery Hero 05',
+            'Gallery Hero 06',
+        ];
         let currentImageIndex1 = 0;
         function openModal(modalId, imageUrl) {
             currentImageIndex1 = images1.indexOf(imageUrl);
@@ -186,7 +195,11 @@
         }
         function showImage() {
             const imageUrl = images1[currentImageIndex1];
+            const title = titles1[currentImageIndex1];
             document.getElementById('modalImage1').src = imageUrl;
+            document.getElementById('imageSlideshowTitle').innerText = `${currentImageIndex1 + 1}/6`;
+            document.getElementById('imageFooter').innerText = `${title}`;
+
         }
         function nextSlide() {
             currentImageIndex1 = (currentImageIndex1 + 1) % images1.length;
@@ -226,8 +239,8 @@
         </div>
         <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
             <img onclick="openModal1('modal', 'https://images.unsplash.com/photo-1509043759401-136742328bb3?ixlib=rb-4.0.3')"
-                src="https://images.unsplash.com/photo-1509043759401-136742328bb3?ixlib=rb-4.0.3"
-                alt="Image 3" class="w-fit h-fit object-cover aspect-square hover:opacity-40">
+                src="https://images.unsplash.com/photo-1509043759401-136742328bb3?ixlib=rb-4.0.3" alt="Image 3"
+                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
         </div>
         <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
             <img onclick="openModal1('modal', 'https://static.vecteezy.com/system/resources/thumbnails/021/746/785/small/holding-a-tree-in-a-ball-ecology-and-environment-concept-with-generative-ai-photo.jpg')"
@@ -236,18 +249,18 @@
         </div>
         <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
             <img onclick="openModal1('modal', 'https://imgupscaler.com/images/samples/animal-after.webp')"
-                src="https://imgupscaler.com/images/samples/animal-after.webp"
-                alt="Image 3" class="w-fit h-fit object-cover aspect-square hover:opacity-40">
+                src="https://imgupscaler.com/images/samples/animal-after.webp" alt="Image 3"
+                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
         </div>
         <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
             <img onclick="openModal1('modal', 'https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg')"
-                src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg"
-                alt="Image 3" class="w-fit h-fit object-cover aspect-square hover:opacity-40">
+                src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg" alt="Image 3"
+                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
         </div>
         <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
             <img onclick="openModal1('modal', 'https://live.staticflickr.com/65535/52211883534_f45cb76810_z.jpg')"
-                src="https://live.staticflickr.com/65535/52211883534_f45cb76810_z.jpg"
-                alt="Image 3" class="w-fit h-fit object-cover aspect-square hover:opacity-40">
+                src="https://live.staticflickr.com/65535/52211883534_f45cb76810_z.jpg" alt="Image 3"
+                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
         </div>
         <!-- Add more image divs as needed -->
     </div>
@@ -260,7 +273,8 @@
         class="modal hidden fixed inset-0 bg-black bg-opacity-50 w-full h-full z-50 flex justify-center items-center">
         <!-- Modal Header -->
         <div class="absolute top-0 p-2 z-50 bg-black w-screen">
-            <h2 class="text-xl text-white absolute left-0 px-4 font-semibold text-center">Image Slideshow</h2>
+            <h2 class="text-xl text-white absolute left-0 px-4 font-semibold text-center" id="imageSlideshowTitle1">
+                Image Slideshow</h2>
             <button class="absolute top-0 z-50 right-0 p-2 px-4 text-white" onclick="closeModal1('modal')">
                 <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -314,7 +328,7 @@
         </button>
         <!-- Modal Footer -->
         <div class="absolute bottom-0 p-2 bg-black w-full">
-            <p class="text-2xl font-medium text-white text-center">Footer</p>
+            <p class="text-2xl font-medium text-white text-center" id="imageFooter1">Footer</p>
         </div>
     </div>
 
@@ -341,6 +355,17 @@
             'https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg',
             'https://live.staticflickr.com/65535/52211883534_f45cb76810_z.jpg',
         ]; // Add more image URLs as needed
+        const titles = [
+            'Tree in Sunset',
+            'Mountain Lake Painting',
+            'Mountain View',
+            'Beautiful Landscape',
+            'Holding a Tree in a Ball',
+            'Animal Portrait',
+            'City Avenue',
+            'Scenic Landscape'
+        ];
+
         let currentImageIndex = 0;
         function openModal1(modalId, imageUrl) {
             currentImageIndex = images.indexOf(imageUrl);
@@ -353,7 +378,11 @@
         }
         function showImage1() {
             const imageUrl = images[currentImageIndex];
+            const title = titles[currentImageIndex];
             document.getElementById('modalImage').src = imageUrl;
+            document.getElementById('imageSlideshowTitle1').innerText = `${currentImageIndex + 1}/8`;
+            document.getElementById('imageFooter1').innerText = `${title}`;
+
         }
         function nextSlide1() {
             currentImageIndex = (currentImageIndex + 1) % images.length;

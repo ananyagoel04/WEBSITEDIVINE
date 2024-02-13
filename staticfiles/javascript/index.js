@@ -7,41 +7,6 @@ button.addEventListener("click", function () {
 });
 
 
-
-
-
-//transition to rotate arrow on dropdown
-const dropdownButton = document.getElementById('dropdownDefaultButton');
-const arrowSvg = document.getElementById('arrow');
-
-dropdownButton.addEventListener('click', function (event) {
-    event.stopPropagation();
-    arrowSvg.classList.toggle('rotate');
-    setTimeout(() => {
-        arrowSvg.classList.remove('no-rotate');
-    }, 300); // Adjust to match the transition duration
-});
-
-// Event listener on the document body to detect clicks outside the button
-document.body.addEventListener('click', function (event) {
-    if (event.target !== dropdownButton) {
-        arrowSvg.classList.remove('rotate');
-        arrowSvg.classList.add('no-rotate');
-        // Remove the 'no-rotate' class after the transition completes
-        setTimeout(() => {
-            arrowSvg.classList.remove('no-rotate');
-        }, 300); // Adjust to match the transition duration
-    }
-});
-
-
-
-
-
-
-
-
-
 ///////script for dropdown menu button in mobile screens
 // Get the button and dropdown content elements
 const dropdownButton1 = document.getElementById('dropdownButton1');
