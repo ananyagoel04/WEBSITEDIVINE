@@ -28,9 +28,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY","django-insecure-%(nl+y6lqvagxcj2qsgfl&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "True").lower() == "true" # comment collectstatic
 
-
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ") #comment collectstatic
-# ALLOWED_HOSTS = []
+if 'ALLOWED_HOSTS' in os.environ:
+    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ") #comment collectstatic
+else:
+    ALLOWED_HOSTS = []
 
 # Application definition
 
