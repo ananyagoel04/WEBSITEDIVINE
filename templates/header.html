@@ -56,7 +56,7 @@
                             </svg></span>
                         <div class="flex-1 px-4">
                             <div class="font-bold text-center">Email</div>
-                            <a href="" class="hover:text-red-600 text-decoration-none">
+                            <a href="mailto:info@divinewisdomschool.in" class="hover:text-red-600 text-decoration-none">
                                 <div class="text-center">info@divinewisdomschool.in</div>
                             </a>
                         </div>
@@ -77,9 +77,9 @@
                         <div class="flex-1 px-4">
                             <div class="font-bold text-center">Phone</div>
                             <div class="text-center">
-                                <a href=""
+                                <a href="tel:9805347187"
                                     class="hover:text-red-600 text-decoration-none"><span>9805347187</span></a><span>,</span>&nbsp;<a
-                                    href="" class="hover:text-red-600 text-decoration-none"><span>1704298187</span></a>
+                                    href="tel:1704298187" class="hover:text-red-600 text-decoration-none"><span>1704298187</span></a>
                             </div>
                         </div>
                     </div>
@@ -145,17 +145,17 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/"
                             class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Home
-                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/'%} ut-2 {% endif %}"></div>
                         </a>
                         <a href="/about/"
                             class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">About
-                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/about/'%} ut-2 {% endif %}"></div>
                         </a>
                         <li class=" block rounded-md px-3 py-2 text-base text-center font-medium w-fit mx-auto">
                             <button id="dropdownButton1" data-collapse-toggle="dropdownContent" type="button"
                                 aria-controls="dropdownContent" aria-expanded="false" class="text-gray-300 ut-1">
                                 <!-- Your existing button content -->
-                                <div class="flex">Programs
+                                <div class="flex mx-auto">Programs
                                     <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round" class="mt-0.5">
@@ -207,15 +207,15 @@
                         </li>
                         <a href="/gallery/"
                             class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Gallery
-                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/gallery/'%} ut-2 {% endif %}"></div>
                         </a>
                         <a href="/parent/"
                             class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Parent
-                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/parent/'%} ut-2 {% endif %}"></div>
                         </a>
                         <a href="/contact/"
                             class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Contact
-                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/contact/'%} ut-2 {% endif %}"></div>
                         </a>
                     </div>
                 </div>
@@ -229,18 +229,19 @@
 
         <nav class="py-4 lg:px-16 md:px-4 md:flex hidden w-full justify-center">
             <!-- <div class="xl:w-10/12 md:w-12/12 flex "> -->
+                <!-- {{request.path}} -->
             <div class=" flex w-full ">
                 <ul class="flex lg:w-10/12 w-full my-auto">
                     <a href="">
                         <li class="p-2 text-xl font-medium block ut-1">
                             <a href="/" class="text-decoration-none"><span class="home">Home</span></a>
-                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                            <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/'%} ut-2 {% endif %}"></div>
                             <!-- <div class="w-36 h-1 border-b-4 border-yellow-300 mt-4 rounded-3xl md:mt-4 "></div> -->
                         </li>
                     </a>
                     <li class="p-2 text-xl font-medium block ut-1">
                         <a href="/about/" class="text-decoration-none"><span class="home">About</span></a>
-                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/about/'%} ut-2 {% endif %}"></div>
                     </li>
                     <li class="p-2 text-xl font-medium block ut-1">
 
@@ -253,7 +254,7 @@
                                 </svg>
                             </div>
                         </button>
-                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '//'%} ut-2 {% endif %}"></div>
 
 
                         <!-- Dropdown menu -->
@@ -289,21 +290,23 @@
                     </li>
                     <li class="p-2 text-xl font-medium block ut-1">
                         <a href="/gallery/" class="text-decoration-none"><span class="home">Gallery</span></a>
-                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/gallery/'%} ut-2 {% endif %}"></div>
                     </li>
                     <li class="p-2 text-xl font-medium block ut-1">
                         <a href="/parent/" class="text-decoration-none"><span class="home">Parents</span></a>
-                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/parent/'%} ut-2 {% endif %}"></div>
                     </li>
                     <li class="p-2 text-xl font-medium block ut-1">
                         <a href="/contact/" class="text-decoration-none"><span class="home">Contact</span></a>
-                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full ut-2"></div>
+                        <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/contact/'%} ut-2 {% endif %}"></div>
                     </li>
                 </ul>
-                <div
+                <a href="http://registration.divinewisdomschool.in/">
+                    <div
                     class=" mx-auto lg:p-8 md:p-4 lg:py-4 md:py-2 w-fit text-center bg-[#F6C663] rounded-full text-lg font-medium my-auto hover:bg-[#F9BC3E]">
                     Enroll Today
                 </div>
+            </a>
 
             </div>
             <!-- <div class=" p-4 px-8 bg-[#F6C663] rounded-full text-lg font-medium text-center my-auto hover:bg-[#F9BC3E]">

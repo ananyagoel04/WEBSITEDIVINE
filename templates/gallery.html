@@ -1,5 +1,6 @@
 {% load static %}
 {% include "header.html" %}
+{% block content %}
 
 <head>
     <meta charset="UTF-8">
@@ -28,69 +29,63 @@
         <div class=" w-fit overflow-hidden relative">
             <div class="md:flex flex-wrap h-full w-full justify-center hidden p-6 ml-3 mb-10 relative z-10">
                 <div class="w-2/12 mt-[12.5%]">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-01.4f99b6d3.jpg&w=384&q=75')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.0}}')"
                         class=" aspect-square rounded-3xl shadow-2xl -rotate-6 transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
-                        src="https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-01.4f99b6d3.jpg&w=384&q=75"
-                        alt="">
+                        src="/media/{{galleryimgs.0}}" alt="{{gallerytitle.0}}">
                 </div>
                 <div class="w-3/12 block">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-02.ca3db8b4.jpg&w=640&q=75')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.1}}')"
                         class=" aspect-square rounded-3xl shadow-2xl -rotate-6 z-10 relative w-3/4 mx-auto transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
-                        src="https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-02.ca3db8b4.jpg&w=640&q=75"
-                        alt="">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-03.ad29ba3e.jpg&w=256&q=75')"
+                        src="/media/{{galleryimgs.1}}" alt="{{gallerytitle.1}}">
+                    <img loading="lazy" onclick="openModal('modal1', '/{{galleryimgs.2}}')"
                         class=" aspect-square rounded-3xl shadow-2xl w-2/4 rotate-6 relative z-0 mx-auto transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer hover:z-20"
-                        src="https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-03.ad29ba3e.jpg&w=256&q=75"
-                        alt="">
+                        src="/media/{{galleryimgs.2}}" alt="{{gallerytitle.2}}">
                 </div>
                 <div class="w-3/12 my-auto ">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-04.47c2cdb8.jpg')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.3}}')"
                         class=" aspect-square rounded-3xl shadow-2xl rotate-6 w-11/12 mx-auto mb-6 transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
-                        src="https://bright.tailwindawesome.com/_next/static/media/gallery-hero-04.47c2cdb8.jpg" alt="">
+                        src="/media/{{galleryimgs.3}}" alt="{{gallerytitle.3}}">
                 </div>
                 <div class=" w-3/12 xl:ml-6 md:ml-4">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-05.902d322c.jpg')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.4}}')"
                         class=" aspect-square rounded-3xl shadow-2xl rotate-6 w-3/4 mx-auto relative z-10 transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
-                        src="https://bright.tailwindawesome.com/_next/static/media/gallery-hero-05.902d322c.jpg" alt="">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-06.06cb4710.jpg')"
+                        src="/media/{{galleryimgs.4}}" alt="{{gallerytitle.4}}">
+                    <img loading="lazy" onclick="openModal('modal1', '/{{galleryimgs.5}}')"
                         class=" aspect-square rounded-3xl shadow-2xl w-2/4 -rotate-6 -mt-3 relative z-0 transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer hover:z-10"
-                        src="https://bright.tailwindawesome.com/_next/static/media/gallery-hero-06.06cb4710.jpg" alt="">
+                        src="/media/{{galleryimgs.5}}" alt="{{gallerytitle.5}}">
                 </div>
             </div>
 
             <div class="grid grid-cols-3 gap-4 px-4 md:hidden mt-4 mb-12">
                 <div class=" w-full h-full">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-01.4f99b6d3.jpg&w=384&q=75')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.0}}')"
                         class=" aspect-square rounded-xl shadow-2xl rotate-6 transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
-                        src="https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-01.4f99b6d3.jpg&w=384&q=75"
-                        alt="">
+                        src="/media/{{galleryimgs.0}}" alt="{{gallerytitle.0}}">
                 </div>
                 <div class="w-full h-full">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-02.ca3db8b4.jpg&w=640&q=75')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.1}}')"
                         class=" aspect-square rounded-xl shadow-2xl -rotate-6 z-10 relative mx-auto transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
-                        src="https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-02.ca3db8b4.jpg&w=640&q=75"
-                        alt="">
+                        src="/media/{{galleryimgs.1}}" alt="{{gallerytitle.1}}">
                 </div>
                 <div class="w-full h-full">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-03.ad29ba3e.jpg&w=256&q=75')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.2}}')"
                         class=" aspect-square rounded-xl shadow-2xl rotate-6 relative z-0 mx-auto transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer hover:z-20"
-                        src="https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-03.ad29ba3e.jpg&w=256&q=75"
-                        alt="">
+                        src="/media/{{galleryimgs.2}}" alt="{{gallerytitle.2}}">
                 </div>
                 <div class=" w-full h-full">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-04.47c2cdb8.jpg')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.3}}')"
                         class=" aspect-square rounded-xl shadow-2xl rotate-6 w-11/12 mx-auto mb-6 transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
-                        src="https://bright.tailwindawesome.com/_next/static/media/gallery-hero-04.47c2cdb8.jpg" alt="">
+                        src="/media/{{galleryimgs.3}}" alt="{{gallerytitle.3}}">
                 </div>
                 <div class="w-full h-full">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-05.902d322c.jpg')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.4}}')"
                         class=" aspect-square rounded-xl shadow-2xl -rotate-6 mx-auto relative z-10 transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
-                        src="https://bright.tailwindawesome.com/_next/static/media/gallery-hero-05.902d322c.jpg" alt="">
+                        src="/media/{{galleryimgs.4}}" alt="{{gallerytitle.4}}">
                 </div>
                 <div class=" w-full h-full">
-                    <img onclick="openModal('modal1', 'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-06.06cb4710.jpg')"
+                    <img loading="lazy" onclick="openModal('modal1', '/media/{{galleryimgs.5}}')"
                         class=" aspect-square rounded-xl shadow-2xl -rotate-6 -mt-3 relative z-0 transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer hover:z-10"
-                        src="https://bright.tailwindawesome.com/_next/static/media/gallery-hero-06.06cb4710.jpg" alt="">
+                        src="/media/{{galleryimgs.5}}" alt="{{gallerytitle.5}}">
 
                 </div>
             </div>
@@ -167,21 +162,17 @@
 
 
 
-
     <script>
-        const images1 = ['https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-01.4f99b6d3.jpg&w=384&q=75',
-            'https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-02.ca3db8b4.jpg&w=640&q=75',
-            'https://bright.tailwindawesome.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgallery-hero-03.ad29ba3e.jpg&w=256&q=75',
-            'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-04.47c2cdb8.jpg',
-            'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-05.902d322c.jpg',
-            'https://bright.tailwindawesome.com/_next/static/media/gallery-hero-06.06cb4710.jpg',]; // Add more image URLs as needed
+        const images1 = [
+            {% for img in galleryimgs %}
+        '/media/{{img}}',
+            {% endfor %}
+            ]; // Add more image URLs as needed
+
         const titles1 = [
-            'Gallery Hero 01',
-            'Gallery Hero 02',
-            'Gallery Hero 03',
-            'Gallery Hero 04',
-            'Gallery Hero 05',
-            'Gallery Hero 06',
+            {% for title in gallerytitle %}
+        '{{title}}',
+            {% endfor %}
         ];
         let currentImageIndex1 = 0;
         function openModal(modalId, imageUrl) {
@@ -213,56 +204,20 @@
 
     <div class="mb-4 flex justify-center">
         <button class=" rounded-full px-4 bg-[#D2C6FA] mr-2" onclick="filterGallery('all')">All</button>
-        <button class=" rounded-full px-4 bg-[#D2C6FA] mr-2" onclick="filterGallery('nature')">Nature</button>
-        <button class=" rounded-full px-4 bg-[#D2C6FA] mr-2"
-            onclick="filterGallery('architecture')">Architecture</button>
+        <button class=" rounded-full px-4 bg-[#D2C6FA] mr-2" onclick="filterGallery('Nature')">Nature</button>
+        <button class=" rounded-full px-4 bg-[#D2C6FA] mr-2" onclick="filterGallery('Architect')">Architecture</button>
         <!-- Add more buttons for other categories as needed -->
     </div>
 
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4" id="gallery">
+        {% for i in gallerytitle1%}
         <!-- Replace the following URLs with your actual image URLs -->
-        <div class="bg-white gallery-item nature rounded-md overflow-hidden shadow-md">
-            <img onclick="openModal1('modal', 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg')"
-                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="Image 1"
+        <div class="bg-white gallery-item {{i.imagefilter1}} rounded-md overflow-hidden shadow-md">
+            <img loading="lazy" onclick="openModal1('modal', '/media/{{i.image1}}')" src="/media/{{i.image1}}" alt="{{i.image_title1}}"
                 class="w-fit h-fit object-cover aspect-square hover:opacity-40">
         </div>
-        <div class="bg-white gallery-item nature rounded-md overflow-hidden shadow-md">
-            <img onclick="openModal1('modal', 'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg')"
-                src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
-                alt="Image 2" class="w-fit h-fit object-cover aspect-square hover:opacity-40">
-        </div>
-        <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
-            <img onclick="openModal1('modal', 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D')"
-                src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D"
-                alt="Image 3" class="w-fit h-fit object-cover aspect-square hover:opacity-40">
-        </div>
-        <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
-            <img onclick="openModal1('modal', 'https://images.unsplash.com/photo-1509043759401-136742328bb3?ixlib=rb-4.0.3')"
-                src="https://images.unsplash.com/photo-1509043759401-136742328bb3?ixlib=rb-4.0.3" alt="Image 3"
-                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
-        </div>
-        <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
-            <img onclick="openModal1('modal', 'https://static.vecteezy.com/system/resources/thumbnails/021/746/785/small/holding-a-tree-in-a-ball-ecology-and-environment-concept-with-generative-ai-photo.jpg')"
-                src="https://static.vecteezy.com/system/resources/thumbnails/021/746/785/small/holding-a-tree-in-a-ball-ecology-and-environment-concept-with-generative-ai-photo.jpg"
-                alt="Image 3" class="w-fit h-fit object-cover aspect-square hover:opacity-40">
-        </div>
-        <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
-            <img onclick="openModal1('modal', 'https://imgupscaler.com/images/samples/animal-after.webp')"
-                src="https://imgupscaler.com/images/samples/animal-after.webp" alt="Image 3"
-                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
-        </div>
-        <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
-            <img onclick="openModal1('modal', 'https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg')"
-                src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg" alt="Image 3"
-                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
-        </div>
-        <div class="bg-white gallery-item architecture rounded-md overflow-hidden shadow-md">
-            <img onclick="openModal1('modal', 'https://live.staticflickr.com/65535/52211883534_f45cb76810_z.jpg')"
-                src="https://live.staticflickr.com/65535/52211883534_f45cb76810_z.jpg" alt="Image 3"
-                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
-        </div>
-        <!-- Add more image divs as needed -->
+        {% endfor %}
     </div>
 
 
@@ -346,24 +301,15 @@
     </script>
 
     <script>
-        const images = ['https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-            'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg',
-            'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D',
-            'https://images.unsplash.com/photo-1509043759401-136742328bb3?ixlib=rb-4.0.3',
-            'https://static.vecteezy.com/system/resources/thumbnails/021/746/785/small/holding-a-tree-in-a-ball-ecology-and-environment-concept-with-generative-ai-photo.jpg',
-            'https://imgupscaler.com/images/samples/animal-after.webp',
-            'https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg',
-            'https://live.staticflickr.com/65535/52211883534_f45cb76810_z.jpg',
+        const images = [
+            {% for img in gallerytitle1 %}
+        '/media/{{img.image1}}',
+            {% endfor %}
         ]; // Add more image URLs as needed
         const titles = [
-            'Tree in Sunset',
-            'Mountain Lake Painting',
-            'Mountain View',
-            'Beautiful Landscape',
-            'Holding a Tree in a Ball',
-            'Animal Portrait',
-            'City Avenue',
-            'Scenic Landscape'
+            {% for title in gallerytitle1 %}
+        '{{title.image_title1}}',
+            {% endfor %}
         ];
 
         let currentImageIndex = 0;
@@ -380,7 +326,7 @@
             const imageUrl = images[currentImageIndex];
             const title = titles[currentImageIndex];
             document.getElementById('modalImage').src = imageUrl;
-            document.getElementById('imageSlideshowTitle1').innerText = `${currentImageIndex + 1}/8`;
+            document.getElementById('imageSlideshowTitle1').innerText = `${currentImageIndex + 1}/{{count}}`;
             document.getElementById('imageFooter1').innerText = `${title}`;
 
         }
@@ -397,6 +343,7 @@
     {% include "logo.html" %}
 
 
+    {% endblock %}
 
     {% include "Footer.html" %}
 

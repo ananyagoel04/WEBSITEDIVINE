@@ -1,12 +1,3 @@
-const button = document.getElementById("mainmenu");
-const menu = document.getElementById("list");
-
-button.addEventListener("click", function () {
-    const isChecked = document.getElementById("checkbox").checked;
-    menu.style.display = isChecked ? "block" : "none";
-});
-
-
 ///////script for dropdown menu button in mobile screens
 // Get the button and dropdown content elements
 const dropdownButton1 = document.getElementById('dropdownButton1');

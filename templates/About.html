@@ -1,5 +1,7 @@
 {% load static %}
 {% include "header.html" %}
+{% block content %}
+
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Gochi Hand" rel="stylesheet">
@@ -7,6 +9,11 @@
     <style>
         .background{
             background-color: #f3f0fc;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
         
     </style>
@@ -22,8 +29,7 @@
             risus viverra adipiscing at in.
         </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6 lg:grid-cols-4 gap-4 bg-[#f3f0fc]">
-
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6 gap-4 bg-[#f3f0fc]">
         <div class="flex justify-center items-center">
           <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 1" class="w-full h-auto rounded-md">
         </div>
@@ -45,9 +51,15 @@
         <div class="flex justify-center items-center">
           <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
         </div>
+        {% for n in aboutdata%}
+        <div class="flex justify-center items-center">
+            <img src="/media/{{n.imageabout}}" alt="{{n.image_title}}" class="w-auto h-auto rounded-md">
+          </div>
+        {% endfor %}
         <div class="flex justify-center items-center">
           <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
         </div>    
+        
       </div>
 
 
@@ -390,21 +402,7 @@
 
 {% include "Footer.html" %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% endblock %}
 </body>
 
 </html>

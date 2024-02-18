@@ -29,8 +29,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY","django-insecure-%(nl+y6lqvagxcj2qsgfl&
 DEBUG = os.environ.get("DEBUG", "True").lower() == "true" # comment collectstatic
 
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ") #comment collectstatic
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ") #comment collectstatic
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'gallery',
+    'tinymce',
+    'about',
 ]
 
 MIDDLEWARE = [
@@ -86,13 +89,13 @@ DATABASES = {
 }
 
 
-if 'DATABASE_URL' in os.environ:
-    # Production configuration using dj_database_url
-    database_url = os.environ.get("DATABASE_URL")#comment collectstatic
-    DATABASES["default"] = dj_database_url.parse(database_url) #comment collectstatic
-else:
-    # Local development configuration
-    DATABASES["default"] = dj_database_url.parse("postgres://database_a13g_user:tottQTAeLag5oyeePRdUTdciEkOlu8mt@dpg-cn06k5ed3nmc7389khf0-a.oregon-postgres.render.com/database_a13g")
+# if 'DATABASE_URL' in os.environ:
+#     # Production configuration using dj_database_url
+#     database_url = os.environ.get("DATABASE_URL")#comment collectstatic
+#     DATABASES["default"] = dj_database_url.parse(database_url) #comment collectstatic
+# else:
+#     # Local development configuration
+#     DATABASES["default"] = dj_database_url.parse("postgres://database_a13g_user:tottQTAeLag5oyeePRdUTdciEkOlu8mt@dpg-cn06k5ed3nmc7389khf0-a.oregon-postgres.render.com/database_a13g")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -141,6 +144,8 @@ STATICFILES_DIRS = [
 (os.path.join(BASE_DIR, "static")),
 ]
 
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 # tag to remove  comment collectstatic
 # python3 manage.py collectstatic

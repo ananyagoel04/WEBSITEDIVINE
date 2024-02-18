@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
 from djangoweb import views
 
 admin.site.site_header ="DIVINE WISDOM"
@@ -26,7 +28,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('parent/', views.parent),
-    path('about/', views.about),
+    path('about/', views.aboutpage),
     path('contact/', views.contact),
-    path('gallery/', views.gallery),
+    path('gallery/', views.gallerypage),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
