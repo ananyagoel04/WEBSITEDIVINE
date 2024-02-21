@@ -18,6 +18,13 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dzimskwuu',
+    'API_KEY': '855474131666424',
+    'API_SECRET': 'FfG87alFoOawh1tZVd6FHWP0MR0',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -82,13 +89,24 @@ WSGI_APPLICATION = 'djangoweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'DWSDB',
+        'USER': 'ADMINDWS',
+        'PASSWORD': 'Divine2011',
+        'HOST': 'dwsdb.c7i6qkocud3x.ap-south-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
 
 # if 'DATABASE_URL' in os.environ:
 #     # Production configuration using dj_database_url
