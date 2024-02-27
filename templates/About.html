@@ -7,21 +7,28 @@
     <link href="https://fonts.googleapis.com/css?family=Gochi Hand" rel="stylesheet">
 
     <style>
-        .background{
+        .background {
             background-color: #f3f0fc;
         }
+
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
-        
     </style>
 </head>
 
 <body>
 
     <div class="bg-[#f3f0fc]">
+        <!-- {% for img in objects %}
+        <div class="w-full h-96">
+            <object data="{{img}}" width="100%" height="100%">
+            </object>
+        </div>
+        {% endfor %} -->
+
         <div class="text-center text-6xl font-bold">Why DWS ?</div>
         <div class="text-center xl:px-96 lg:px-60 md:px-44 px-8 text-xl leading-9">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -31,31 +38,39 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6 gap-4 bg-[#f3f0fc]">
         <div class="flex justify-center items-center">
-          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 1" class="w-full h-auto rounded-md">
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 1"
+                class="w-full h-auto rounded-md">
         </div>
         <div class="flex justify-center items-center">
-          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 2" class="w-full h-auto rounded-md">
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 2"
+                class="w-full h-auto rounded-md">
         </div>
         <div class="flex justify-center items-center">
-          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
+                class="w-full h-auto rounded-md">
         </div>
         <div class="flex justify-center items-center">
-          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
+                class="w-full h-auto rounded-md">
         </div>
         <div class="flex justify-center items-center">
-          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
+                class="w-full h-auto rounded-md">
         </div>
         <div class="flex justify-center items-center">
-          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
+                class="w-full h-auto rounded-md">
         </div>
         <div class="flex justify-center items-center">
-          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
+                class="w-full h-auto rounded-md">
         </div>
         <div class="flex justify-center items-center">
-          <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3" class="w-full h-auto rounded-md">
-        </div>    
-        
-      </div>
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
+                class="w-full h-auto rounded-md">
+        </div>
+
+    </div>
 
 
 
@@ -102,8 +117,8 @@
 
     <div class="md:flex p-4 block my-12">
         <div class="mx-auto my-auto md:w-1/2 max-w-lg md:hidden relative">
-            <img src="{% static 'icons/dotedlines.svg' %}"
-                class="mx-auto my-auto px-14 absolute inset-0 w-full h-96" alt="" />
+            <img src="{% static 'icons/dotedlines.svg' %}" class="mx-auto my-auto px-14 absolute inset-0 w-full h-96"
+                alt="" />
             <img src="{% static 'icons/home-blocks-02.jpg' %}" alt="Second Image" class="relative z-10" />
         </div>
 
@@ -133,8 +148,8 @@
 
     <div class="md:flex p-4 block my-12">
         <div class="mx-auto my-auto md:w-1/2 max-w-lg md:hidden relative">
-            <img src="{% static 'icons/dotedlines.svg' %}"
-                class="mx-auto my-auto px-14 absolute inset-0 w-full h-96" alt="" />
+            <img src="{% static 'icons/dotedlines.svg' %}" class="mx-auto my-auto px-14 absolute inset-0 w-full h-96"
+                alt="" />
             <img src="{% static 'icons/home-blocks-02.jpg' %}" alt="Second Image" class="relative z-10" />
         </div>
 
@@ -163,8 +178,8 @@
 
     <div class="md:flex p-4 block my-12">
         <div class="mx-auto my-auto md:w-1/2 max-w-lg md:hidden relative">
-            <img src="{% static 'icons/dotedlines.svg' %}"
-                class="mx-auto my-auto px-14 absolute inset-0 w-full h-96" alt="" />
+            <img src="{% static 'icons/dotedlines.svg' %}" class="mx-auto my-auto px-14 absolute inset-0 w-full h-96"
+                alt="" />
             <img src="{% static 'icons/home-blocks-02.jpg' %}" alt="Second Image" class="relative z-10" />
         </div>
 
@@ -285,8 +300,8 @@
 
     <div class="md:flex p-4 block my-12">
         <div class="mx-auto my-auto md:w-1/2 max-w-lg md:hidden relative">
-            <img src="{% static 'icons/dotedlines.svg' %}"
-                class="mx-auto my-auto px-14 absolute inset-0 w-full h-96" alt="" />
+            <img src="{% static 'icons/dotedlines.svg' %}" class="mx-auto my-auto px-14 absolute inset-0 w-full h-96"
+                alt="" />
             <img src="{% static 'icons/home-blocks-02.jpg' %}" alt="Second Image" class="relative z-10" />
         </div>
 
@@ -353,34 +368,82 @@
 
     <div class="">
         <h3 class="text-5xl text-center font-bold -mt-10">Explore yourself with us</h3>
-        <p class="text-center md:px-56 my-4 px-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, explicabo? Libero maiores laboriosam, natus amet quidem quia quo quam ab recusandae iusto itaque ipsum reiciendis impedit aliquid adipisci perferendis dolore.</p>
+        <p class="text-center md:px-56 my-4 px-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            explicabo? Libero maiores laboriosam, natus amet quidem quia quo quam ab recusandae iusto itaque ipsum
+            reiciendis impedit aliquid adipisci perferendis dolore.</p>
         <div class="md:px-40 px-8 my-4">
-            <form action="" class=" bg-white shadow-2xl w-full z-10 p-10 md:px-14 border-2 rounded-2xl">
+            <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkForm()"
+                class="bg-white shadow-2xl w-full z-10 p-10 md:px-14 border-2 rounded-2xl">
+                {% csrf_token %}
                 <div class="text-3xl font-bold text-center md:text-left">Send us your Resume</div>
                 <br>
                 <label for="">Name*</label>
                 <br>
-                <input type="text" placeholder='Name' class="border-2 p-2 rounded-xl w-full h-10">
+                <input type="text" placeholder='Name' name="Name" class="border-2 p-2 rounded-xl w-full h-10">
                 <br>
                 <label for="">Email*</label>
                 <br>
-                <input type="email" placeholder='xyz@gmail.com' class="border-2 p-2 rounded-xl w-full h-10">
+                <input type="email" placeholder='xyz@gmail.com' name="Email"
+                    class="border-2 p-2 rounded-xl w-full h-10">
                 <br>
                 <label for="">Phone</label>
                 <br>
-                <input type="number" placeholder='Phone Number' class="border-2 p-2 rounded-xl w-full h-10">
+                <input type="tel" placeholder='Phone Number' name="Phone" maxlength="10"
+                    class="border-2 p-2 rounded-xl w-full h-10">
+                <br>
+                <label for="">Upload Your Resume*</label>
+                <br>
+                <input type="file" placeholder='Your Resume' name="Resume" class="border-2 p-2 rounded-xl w-full h-14">
                 <br>
                 <label for="">Message</label>
                 <br>
-                <textarea name="" placeholder='Message' id="" rows="4"
-                    class=" w-full border-1 rounded-xl p-2 border-2"></textarea>
+                <textarea name="Message" placeholder='Message' id="" rows="4"
+                    class="w-full border-1 rounded-xl p-2 border-2"></textarea>
                 <br>
-                <div
-                    class="p-2 px-4 lg:p-8 md:p-4 lg:py-2 md:py-2 w-fit text-center bg-[#F6C663] rounded-full text-lg font-medium my-auto hover:bg-[#F9BC3E]">
-                    Send
+                <button type="submit">
+                    <div
+                        class="p-2 px-4 lg:p-8 md:p-4 lg:py-2 md:py-2 w-fit text-center bg-[#F6C663] rounded-full text-lg font-medium my-auto hover:bg-[#F9BC3E]">
+                        Send
+                    </div>
+                </button>
+                <div id="success-message"
+                    class="text-green-500 text-center mt-4 {% if not success_message %}hidden{% endif %}">
+                    {% if success_message %}Resume sent successfully!{% endif %}
                 </div>
+                <div id="error-message" class="text-red-500 text-center mt-4 hidden"></div>
             </form>
         </div>
+
+        <script>
+            function checkForm() {
+                // Check if all required fields are filled
+                var name = document.getElementsByName("Name")[0].value;
+                var email = document.getElementsByName("Email")[0].value;
+                var phone = document.getElementsByName("Phone")[0].value;
+                var resume = document.getElementsByName("Resume")[0].files[0];
+
+                var errorMessage = document.getElementById("error-message");
+                var successMessage = document.getElementById("success-message");
+
+                if (name === "" || email === "" || phone === "" || phone.length !== 10) {
+                    // Show the error message
+                    errorMessage.textContent = "Please fill out all the required fields.";
+                    errorMessage.style.display = "block";
+                    // Hide the success message
+                    successMessage.style.display = "none";
+                    // Prevent the form submission
+                    return false;
+                } else if (phone.length !== 10) {
+                    // Show the error message
+                    errorMessage.textContent = "Phone number must be exactly 10 digits.";
+                    errorMessage.style.display = "block";
+                    // Hide the success message
+                    successMessage.style.display = "none";
+                    // Prevent the form submission
+                    return false;
+                }
+            }
+        </script>
     </div>
 
 
@@ -395,9 +458,9 @@
 
 
 
-{% include "Footer.html" %}
+    {% include "Footer.html" %}
 
-{% endblock %}
+    {% endblock %}
 </body>
 
 </html>

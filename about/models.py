@@ -1,22 +1,38 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 from django.db.models.signals import pre_delete, pre_save
 from django.dispatch import receiver
-import os
+import cloudinary
+
 class about(models.Model):
-    image_title=models.CharField(max_length=50)
-    imageabout=models.FileField(upload_to="about/", max_length=100, null=True, default=None)
+    pdftitle = models.CharField(max_length=100)    
+    pdf = models.FileField(upload_to='about/', null=True, default=None)
+
+    def get_pdf_url(self):
+        return self.pdf.url
+@receiver(pre_delete, sender=about)
+def about_file_cleanup(sender, instance, **kwargs):
+    # Check if the instance has an image and it's not the default value
+    if instance.pdf and 'default_pdf' not in instance.pdf.name:
+        # Extract public_id from Cloudinary URL
+        public_id = instance.pdf.name.split('.')[0]
+        # Delete the image from Cloudinary
+        cloudinary.uploader.destroy(public_id)
+
 @receiver(pre_save, sender=about)
 def about_file_update(sender, instance, **kwargs):
-        # Check if the instance has a file and it's not the default value
-        if instance.imageabout and instance.imageabout.name != 'about/default_image.jpg':
-            try:
-                # Get the existing instance from the database
-                old_instance = about.objects.get(pk=instance.pk)
-                # Compare the old and new file paths
-                if old_instance.imageabout.path != instance.imageabout.path:
-                    # Delete the old file before saving the new one
-                    if os.path.isfile(old_instance.imageabout.path):
-                        os.remove(old_instance.imageabout.path)
-            except about.DoesNotExist:
-                pass  # Handle the case of a new instance being created
-# Create your models here.
+    # Check if the instance has an image and it's not the default value
+    if instance.pdf and 'default_pdf' not in instance.pdf.name:
+        try:
+            # Get the existing instance from the database
+            old_instance = about.objects.get(pk=instance.pk)
+            # Extract public_id from Cloudinary URL
+            old_public_id = old_instance.image.pdf.split('.')[0]
+            new_public_id = instance.image.pdf.split('.')[0]
+            # Compare the old and new images' public_ids
+            if old_public_id != new_public_id:
+                # Delete the old image from Cloudinary
+                cloudinary.uploader.destroy(old_public_id)
+        except about.DoesNotExist:
+            pass  # Handle the case of a new instance being created
+

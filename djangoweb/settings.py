@@ -12,12 +12,20 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import dj_database_url
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+cloudinary.config(
+    cloud_name="dzimskwuu",
+    api_key="855474131666424",
+    api_secret="FfG87alFoOawh1tZVd6FHWP0MR0",
+)
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dzimskwuu',
     'API_KEY': '855474131666424',
@@ -65,6 +73,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'djangoweb.urls'
@@ -168,5 +178,19 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
 
-# tag to remove  comment collectstatic
-# python3 manage.py collectstatic
+
+
+# settings.py
+
+# Email settings for Gmail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtppro.zoho.in'
+EMAIL_PORT = 587  # Use 465 if you are using SSL
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'info@divinewisdomschool.in'
+EMAIL_HOST_PASSWORD = 'sg6ZRmnLjTNR'
+
+# Default "from" address for email messages sent by Django
+# DEFAULT_FROM_EMAIL = 'infoananya20@gmail.com'
+# "From" address for error messages sent to the site administrators
+# SERVER_EMAIL = 'infoananya20@gmail.com'

@@ -1,19 +1,66 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from gallery.models import Gallery, maingallery
-from about.models import about
 from django.shortcuts import render,redirect
+from about.models import about
+from django.core.mail import send_mail, EmailMessage
+
+
+
+
+
+def send_form_data_email(name, email, phone, resume, message):
+    subject = "Resume"
+    body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}"
+
+    email_message = EmailMessage(
+        subject,
+        body,
+        "info@divinewisdomschool.in",
+        ["ananyagoelps@gmail.com"],
+        reply_to=[email],
+    )
+
+    # Attach the resume file to the email
+    if resume:
+        email_message.attach(resume.name, resume.read(), resume.content_type)
+
+    # Send the email
+    email_message.send()
+
+
 def home(request):
+    # send_email_example()
     return render (request,"index.html")
 def logo(request):
     return render (request,"logo.html")
 def parent(request):
     return render (request,"parent.html")
+
 def aboutpage(request):
-    aboutdata = about.objects.all()[:6]
-    data={
-        'aboutdata':aboutdata
-    }
-    return render (request,'About.html',data)
+    objects = about.objects.all()
+    objectsurl = [about_obj.get_pdf_url() for about_obj in objects]
+
+    data = {'objects': objectsurl}
+
+    if request.method == 'POST':
+        name = request.POST.get('Name', '')
+        email = request.POST.get('Email', '')
+        phone = request.POST.get('Phone', '')
+        resume = request.FILES.get('Resume', None)
+        message = request.POST.get('Message', '')
+
+        # Validate the input data before sending the email.
+        if name and email and resume:
+            # Call the function to send form data as an email
+            send_form_data_email(name, email, phone, resume, message)
+
+            # Show success message
+            return render(request, 'About.html', {'objects': objectsurl, 'success_message': True})
+
+    return render(request, 'About.html', data)
+
+
+
 
 def contact(request):
     return render (request,"contactus.html")
