@@ -1,3 +1,47 @@
+const button1 = document.getElementById("mainmenu");
+const menu = document.getElementById("list");
+
+button1.addEventListener("click", function () {
+    const isChecked = document.getElementById("checkbox").checked;
+    menu.style.display = isChecked ? "block" : "none";
+});
+
+
+
+
+
+//transition to rotate arrow on dropdown
+const dropdownButton2 = document.getElementById('dropdownDefaultButton');
+const arrowSvg = document.getElementById('arrow');
+
+dropdownButton2.addEventListener('click', function (event) {
+    event.stopPropagation();
+    arrowSvg.classList.toggle('rotate');
+    setTimeout(() => {
+        arrowSvg.classList.remove('no-rotate');
+    }, 300); // Adjust to match the transition duration
+});
+
+// Event listener on the document body to detect clicks outside the button
+document.body.addEventListener('click', function (event) {
+    if (event.target !== dropdownButton2) {
+        arrowSvg.classList.remove('rotate');
+        arrowSvg.classList.add('no-rotate');
+        // Remove the 'no-rotate' class after the transition completes
+        setTimeout(() => {
+            arrowSvg.classList.remove('no-rotate');
+        }, 300); // Adjust to match the transition duration
+    }
+});
+
+
+
+
+
+
+
+
+
 ///////script for dropdown menu button in mobile screens
 // Get the button and dropdown content elements
 const dropdownButton1 = document.getElementById('dropdownButton1');

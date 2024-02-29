@@ -1,7 +1,7 @@
-const button = document.getElementById("mainmenu");
+const button1 = document.getElementById("mainmenu");
 const menu = document.getElementById("list");
 
-button.addEventListener("click", function () {
+button1.addEventListener("click", function () {
     const isChecked = document.getElementById("checkbox").checked;
     menu.style.display = isChecked ? "block" : "none";
 });
@@ -11,10 +11,10 @@ button.addEventListener("click", function () {
 
 
 //transition to rotate arrow on dropdown
-const dropdownButton = document.getElementById('dropdownDefaultButton');
+const dropdownButton2 = document.getElementById('dropdownDefaultButton');
 const arrowSvg = document.getElementById('arrow');
 
-dropdownButton.addEventListener('click', function (event) {
+dropdownButton2.addEventListener('click', function (event) {
     event.stopPropagation();
     arrowSvg.classList.toggle('rotate');
     setTimeout(() => {
@@ -24,7 +24,7 @@ dropdownButton.addEventListener('click', function (event) {
 
 // Event listener on the document body to detect clicks outside the button
 document.body.addEventListener('click', function (event) {
-    if (event.target !== dropdownButton) {
+    if (event.target !== dropdownButton2) {
         arrowSvg.classList.remove('rotate');
         arrowSvg.classList.add('no-rotate');
         // Remove the 'no-rotate' class after the transition completes
