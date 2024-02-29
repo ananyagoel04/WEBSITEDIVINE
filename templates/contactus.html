@@ -39,30 +39,72 @@
             <img class="md:w-32 w-16 relative md:-bottom-24 -bottom-12  md:left-14 left-60"
                 src="/static/icons/dots1.svg" alt="">
             <div class="flex justify-center w-full relative h-fit ">
-                <form action="" class=" bg-white shadow-2xl w-full z-10 p-10 md:px-14 border-2 rounded-2xl">
+                <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkForm()"
+                    class=" bg-white shadow-2xl w-full z-10 p-10 md:px-14 border-2 rounded-2xl">
+                    {% csrf_token %}
                     <div class="text-3xl font-bold text-center md:text-left">Send us a message</div>
                     <br>
                     <label for="">Name*</label>
                     <br>
-                    <input type="text" placeholder='Name' class="border-2 p-2 rounded-xl w-full h-10">
+                    <input type="text" placeholder='Name' required name="Name" class="border-2 p-2 rounded-xl w-full h-10">
                     <br>
                     <label for="">Email*</label>
                     <br>
-                    <input type="email" placeholder='xyz@gmail.com' class="border-2 p-2 rounded-xl w-full h-10">
+                    <input type="email" placeholder='xyz@gmail.com' name="Email"
+                        class="border-2 p-2 rounded-xl w-full h-10">
                     <br>
                     <label for="">Phone</label>
                     <br>
-                    <input type="number" placeholder='Phone Number' class="border-2 p-2 rounded-xl w-full h-10">
+                    <input type="number" placeholder='Phone Number' name="Phone" required maxlength="10"
+                        class="border-2 p-2 rounded-xl w-full h-10">
                     <br>
                     <label for="">Message</label>
                     <br>
-                    <textarea name="" placeholder='Message' id="" rows="4"
+                    <textarea name="Message" placeholder='Message' required id="" rows="4"
                         class=" w-full border-1 rounded-xl p-2 border-2"></textarea>
                     <br>
-                    <div
-                        class="p-2 lg:p-8 md:p-4 lg:py-4 md:py-2 w-fit text-center bg-[#F6C663] rounded-full text-lg font-medium my-auto hover:bg-[#F9BC3E]">
-                        Send Message
+                    <button type="submit">
+                        <div
+                            class="p-2 lg:p-8 md:p-4 lg:py-4 md:py-2 w-fit text-center bg-[#F6C663] rounded-full text-lg font-medium my-auto hover:bg-[#F9BC3E]">
+                            Send Message
+                        </div>
+                    </button>
+                    <div id="success-message"
+                        class="text-green-500 text-center mt-4 {% if not success_message %}hidden{% endif %}">
+                        {% if success_message %}Message sent successfully!{% endif %}
                     </div>
+                    <div id="error-message" class="text-red-500 text-center mt-4 hidden"></div>
+                    <script>
+                        function checkForm() {
+                            // Check if all required fields are filled
+                            var name = document.getElementsByName("Name")[0].value;
+                            var email = document.getElementsByName("Email")[0].value;
+                            var phone = document.getElementsByName("Phone")[0].value;
+                            var resume = document.getElementsByName("Resume")[0].files[0];
+
+                            var errorMessage = document.getElementById("error-message");
+                            var successMessage = document.getElementById("success-message");
+
+                            if (name === "" || email === "" || phone === "" || phone.length !== 10) {
+                                // Show the error message
+                                errorMessage.textContent = "Please fill out all the required fields.";
+                                errorMessage.style.display = "block";
+                                // Hide the success message
+                                successMessage.style.display = "none";
+                                // Prevent the form submission
+                                return false;
+                            } else if (phone.length !== 10) {
+                                // Show the error message
+                                errorMessage.textContent = "Phone number must be exactly 10 digits.";
+                                errorMessage.style.display = "block";
+                                // Hide the success message
+                                successMessage.style.display = "none";
+                                // Prevent the form submission
+                                return false;
+                            }
+                        }
+                    </script>
+
                 </form>
                 <img class="w-24 hidden md:flex rotate-90 top-28 my-auto -left-16 bottom-0 relative right-0 h-fit z-0"
                     src="/static/icons/dots1.svg" alt="">
@@ -125,7 +167,7 @@
         </div>
     </div>
 
-    
+
     <div class="p-10 pt-0">
         <div class="mapouter mx-auto">
             <div class="gmap_canvas rounded-3xl">

@@ -124,7 +124,7 @@
             </button>
         </div> -->
 
-        <div class="md:hidden flex p-5 mx-auto px-8 ">
+        <div class="md:hidden flex p-5 mx-auto ">
             <div class="text-cyan-400 flex mx-auto my-auto">
                 <div class="shrink-0 lg:relative w-60 my-auto">
                     <img src="{% static 'icons/logo.svg' %}" class="-m-6 -mb-3" alt="">
@@ -140,22 +140,22 @@
                         <div class="bars" id="bar3"></div>
                     </label>
                 </button>
-                <div class="hidden mx-auto top-0 absolute w-full left-0 bg-slate-950 z-20 p-24" id="list">
-                    <div class="mx-auto text-center">
+                <div class="hidden mx-auto top-0 absolute w-full left-0 bg-slate-950 z-20 py-24" id="list">
+                    <div class="mx-auto text-center p-12">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/"
-                            class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Home
+                            class="text-gray-300 block  rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Home
                             <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/'%} ut-2 {% endif %}"></div>
                         </a>
                         <a href="/about/"
                             class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">About
                             <div class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/about/'%} ut-2 {% endif %}"></div>
                         </a>
-                        <li class=" block rounded-md px-3 py-2 text-base text-center font-medium w-fit mx-auto">
+                        <li class=" block rounded-md py-2 text-base text-center font-medium w-fit mx-auto">
                             <button id="dropdownButton1" data-collapse-toggle="dropdownContent" type="button"
                                 aria-controls="dropdownContent" aria-expanded="false" class="text-gray-300 ut-1">
                                 <!-- Your existing button content -->
-                                <div class="flex mx-auto">Programs
+                                <div class="flex mx-auto px-3">Programs
                                     <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round" class="mt-0.5">
@@ -199,11 +199,19 @@
                                                 Fugiat, praesentium.</div>
                                         </a>
                                     </li>
+                                    <hr class="w-[90%] mx-auto my-2">
+                                    <li>
+                                        <a href="www.google.com"
+                                            class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
+                                            <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
+                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                elit.
+                                                Fugiat, praesentium.</div>
+                                        </a>
+                                    </li>
                                 </ul>
                                 <!-- Add more items as needed -->
                             </div>
-
-
                         </li>
                         <a href="/gallery/"
                             class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Gallery

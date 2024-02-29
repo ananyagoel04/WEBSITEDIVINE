@@ -11,11 +11,12 @@ from django.core.mail import send_mail, EmailMessage
 def send_form_data_email(name, email, phone, resume, message):
     subject = "Resume"
     body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}"
-
+    sender_name = "DIVINE WISDOM"
+    sender_email = "info@divinewisdomschool.in"
     email_message = EmailMessage(
         subject,
         body,
-        "info@divinewisdomschool.in",
+        f'{sender_name} <{sender_email}>',
         ["ananyagoelps@gmail.com"],
         reply_to=[email],
     )
@@ -62,8 +63,37 @@ def aboutpage(request):
 
 
 
+def send_contact(name, email, phone, message):
+    subject = "MESSAGE FROM WEBSITE"
+    body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}"
+    sender_name = "DIVINE WISDOM"
+    sender_email = "info@divinewisdomschool.in"
+    email_message = EmailMessage(
+        subject,
+        body,
+        f'{sender_name} <{sender_email}>',
+        ["receptiondivinewisdom@gmail.com"],
+        reply_to=[email],
+    )
+
+    # Send the email
+    email_message.send()
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('Name', '')
+        email = request.POST.get('Email', '')
+        phone = request.POST.get('Phone', '')
+        message = request.POST.get('Message', '')
+
+        # Validate the input data before sending the email.
+        if name and email:
+            # Call the function to send form data as an email
+            send_contact(name, email, phone, message)
+
+            # Show success message
+            return render(request, 'contactus.html', {'success_message': True})
     return render (request,"contactus.html")
+
 # def gallerypage(request):
 #     galleryimgs = Gallery.objects.values_list('image',flat=True)[:6]
     # gallerytitle = Gallery.objects.values_list('image_title',flat=True)[:6]
