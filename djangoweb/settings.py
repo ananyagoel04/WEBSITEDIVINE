@@ -41,7 +41,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 SECRET_KEY = os.environ.get("SECRET_KEY","django-insecure-%(nl+y6lqvagxcj2qsgfl&1e%#xtrgrp8%vik*^am9j65g)l!1")#comment collectstatic
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "True").lower() == "true" # comment collectstatic
+DEBUG = os.environ.get("DEBUG", "False").lower() == "false" # comment collectstatic
 
 if 'ALLOWED_HOSTS' in os.environ:
     ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ") #comment collectstatic
