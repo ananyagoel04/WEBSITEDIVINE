@@ -109,16 +109,24 @@ WSGI_APPLICATION = 'djangoweb.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'DWSDB',
+#         'USER': 'ADMINDWS',
+#         'PASSWORD': 'Divine2011',
+#         'HOST': 'dwsdb.c7i6qkocud3x.ap-south-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DWSDB',
-        'USER': 'ADMINDWS',
-        'PASSWORD': 'Divine2011',
-        'HOST': 'dwsdb.c7i6qkocud3x.ap-south-1.rds.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # if 'DATABASE_URL' in os.environ:
 #     # Production configuration using dj_database_url
