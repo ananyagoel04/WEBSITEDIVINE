@@ -4,7 +4,7 @@ from django.dispatch import receiver
 import cloudinary
 
 class Gallery(models.Model):
-    image_title = models.CharField(max_length=10)
+    image_title = models.CharField(max_length=50)
     filter = [
         ('Nature', 'Nature'),
         ('Architect', 'Architect'),
@@ -47,7 +47,7 @@ def gallery_file_update(sender, instance, **kwargs):
             pass  # Handle the case of a new instance being created
 
 class maingallery(models.Model):
-    image_title1 = models.CharField(max_length=10)
+    image_title1 = models.CharField(max_length=50)
     filter1 = [
         ('Nature', 'Nature'),
         ('Architect', 'Architect'),
