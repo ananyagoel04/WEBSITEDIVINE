@@ -37,7 +37,7 @@
                     <img loading="lazy" onclick="openModal('modal1', '{{galleryimgs.1}}')"
                         class=" aspect-square rounded-3xl shadow-2xl -rotate-6 z-10 relative w-3/4 mx-auto transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer"
                         src="{{galleryimgs.1}}" alt="{{gallerytitle.1}}">
-                    <img loading="lazy" onclick="openModal('modal1', '/{{galleryimgs.2}}')"
+                    <img loading="lazy" onclick="openModal('modal1', '{{galleryimgs.2}}')"
                         class=" aspect-square rounded-3xl shadow-2xl w-2/4 rotate-6 relative z-0 mx-auto transition-transform transform origin-center hover:scale-110 hover:rotate-0 hover:cursor-pointer hover:z-20"
                         src="{{galleryimgs.2}}" alt="{{gallerytitle.2}}">
                 </div>
@@ -159,6 +159,22 @@
         </div>
     </div>
 
+    <script>
+        // Add event listener for keydown event
+        document.addEventListener("keydown", function (event) {
+            // Check if the pressed key is the Escape key (keyCode 27)
+            if (event.keyCode === 27) {
+                // Call the closeModal('modal1') function to close the modal
+                closeModal('modal1');
+            } else if (event.keyCode === 37) { // Check if the pressed key is the Left Arrow key (keyCode 37)
+                // Call the prevSlide() function to move to the previous slide
+                prevSlide();
+            } else if (event.keyCode === 39) { // Check if the pressed key is the Right Arrow key (keyCode 39)
+                // Call the nextSlide() function to move to the next slide
+                nextSlide();
+            }
+        });
+    </script>
 
 
 
@@ -214,8 +230,8 @@
         {% for i in gallerytitle1 %}
         <!-- Replace the following URLs with your actual image URLs -->
         <div class="bg-white gallery-item {{i.image_filter1}} rounded-md overflow-hidden shadow-md">
-            <img loading="lazy" onclick="openModal1('modal', '{{i.image_url1}}')" src="{{i.image_url1}}" alt="{{i.image_title1}}"
-                class="w-fit h-fit object-cover aspect-square hover:opacity-40">
+            <img loading="lazy" onclick="openModal1('modal', '{{i.image_url1}}')" src="{{i.image_url1}}"
+                alt="{{i.image_title1}}" class="w-fit h-fit object-cover aspect-square hover:opacity-40">
         </div>
         {% endfor %}
     </div>
@@ -298,6 +314,25 @@
                 }
             });
         }
+    </script>
+
+
+
+    <script>
+        // Add event listener for keydown event
+        document.addEventListener("keydown", function (event) {
+            // Check if the pressed key is the Escape key (keyCode 27)
+            if (event.keyCode === 27) {
+                // Call the closeModal1('modal') function to close the modal
+                closeModal1('modal');
+            } else if (event.keyCode === 37) { // Check if the pressed key is the Left Arrow key (keyCode 37)
+                // Call the prevSlide1() function to move to the previous slide
+                prevSlide1();
+            } else if (event.keyCode === 39) { // Check if the pressed key is the Right Arrow key (keyCode 39)
+                // Call the nextSlide1() function to move to the next slide
+                nextSlide1();
+            }
+        });
     </script>
 
     <script>
