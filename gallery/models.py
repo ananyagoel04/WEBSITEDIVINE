@@ -2,6 +2,8 @@ from django.db import models
 from django.db.models.signals import pre_delete, pre_save
 from django.dispatch import receiver
 import cloudinary
+import hashlib
+
 
 class Gallery(models.Model):
     image_title = models.CharField(max_length=50)
@@ -36,15 +38,18 @@ def gallery_file_update(sender, instance, **kwargs):
         try:
             # Get the existing instance from the database
             old_instance = Gallery.objects.get(pk=instance.pk)
-            # Extract public_id from Cloudinary URL
-            old_public_id = old_instance.image.name.split('.')[0]
-            new_public_id = instance.image.name.split('.')[0]
-            # Compare the old and new images' public_ids
-            if old_public_id != new_public_id:
-                # Delete the old image from Cloudinary
-                cloudinary.uploader.destroy(old_public_id)
+            # Check if the image has changed by comparing file content
+            if old_instance.image != instance.image:
+                # Extract public_id from Cloudinary URL
+                old_public_id = old_instance.image.name.split('.')[0]
+                new_public_id = instance.image.name.split('.')[0]
+                # Compare the old and new images' public_ids
+                if old_public_id != new_public_id:
+                    # Delete the old image from Cloudinary
+                    cloudinary.uploader.destroy(old_public_id)
         except Gallery.DoesNotExist:
             pass  # Handle the case of a new instance being created
+
 
 class maingallery(models.Model):
     image_title1 = models.CharField(max_length=50)
@@ -79,12 +84,14 @@ def maingallery_file_update(sender, instance, **kwargs):
         try:
             # Get the existing instance from the database
             old_instance = maingallery.objects.get(pk=instance.pk)
-            # Extract public_id from Cloudinary URL
-            old_public_id = old_instance.image1.name.split('.')[0]
-            new_public_id = instance.image1.name.split('.')[0]
-            # Compare the old and new images' public_ids
-            if old_public_id != new_public_id:
-                # Delete the old image from Cloudinary
-                cloudinary.uploader.destroy(old_public_id)
+            # Check if the image has changed by comparing file content
+            if old_instance.image1 != instance.image1:
+                # Extract public_id from Cloudinary URL
+                old_public_id = old_instance.image1.name.split('.')[0]
+                new_public_id = instance.image1.name.split('.')[0]
+                # Compare the old and new images' public_ids
+                if old_public_id != new_public_id:
+                    # Delete the old image from Cloudinary
+                    cloudinary.uploader.destroy(old_public_id)
         except maingallery.DoesNotExist:
             pass  # Handle the case of a new instance being created
