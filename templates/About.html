@@ -37,46 +37,13 @@
         </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6 gap-4 bg-[#f3f0fc]">
+        {% for img_data in aboutimg %}
         <div class="flex justify-center items-center">
-            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 1"
-                class="w-full h-auto rounded-md">
+            <img src="{{ img_data.url }}" alt="{{ img_data.title }}"
+                class="w-full aspect-square h-auto rounded-md">
         </div>
-        <div class="flex justify-center items-center">
-            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 2"
-                class="w-full h-auto rounded-md">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
-                class="w-full h-auto rounded-md">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
-                class="w-full h-auto rounded-md">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
-                class="w-full h-auto rounded-md">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
-                class="w-full h-auto rounded-md">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
-                class="w-full h-auto rounded-md">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="Image 3"
-                class="w-full h-auto rounded-md">
-        </div>
-
+        {% endfor %}
     </div>
-
-
-
-
-
-
 
     <div class="bg-[#f3f0fc] xl:px-64 px-10 justify-start text-2xl">
         <p class="p-4">

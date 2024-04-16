@@ -31,6 +31,7 @@ urlpatterns = [
     path('about/', views.aboutpage,name='about',),
     path('contact/', views.contact),
     path('gallery/', views.gallerypage),
+    path('admissions/', views.admission),
 ]
 
 

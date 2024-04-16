@@ -1,7 +1,7 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from gallery.models import Gallery, maingallery
 from django.shortcuts import render,redirect
-from about.models import about
+from about.models import aboutimg, about
 from django.core.mail import send_mail, EmailMessage
 
 
@@ -36,12 +36,18 @@ def logo(request):
     return render (request,"logo.html")
 def parent(request):
     return render (request,"parent.html")
+def admission(request):
+    return render (request,"admissions.html")
 
 def aboutpage(request):
+    aboutimgdata = aboutimg.objects.all()[:6]
+    about_data = [{'title': obj.image_title, 'url': obj.get_image_url()} for obj in aboutimgdata]
     objects = about.objects.all()
     objectsurl = [about_obj.get_pdf_url() for about_obj in objects]
 
-    data = {'objects': objectsurl}
+    data = {'objects': objectsurl,
+            'aboutimg':about_data,
+            }
 
     if request.method == 'POST':
         name = request.POST.get('Name', '')
