@@ -32,6 +32,18 @@ urlpatterns = [
     path('contact/', views.contact),
     path('gallery/', views.gallerypage),
     path('admissions/', views.admission),
+    path('Personal Growth and Development/', views.personal),
+    path('Effective Interpersonal Skills/', views.effective),
+    path('Effective Communication Skills/', views.Communication),
+    path('Deepened Spiritual Values/', views.Deepened),
+    path('Intellectual Growth/', views.Intellectual),
+    path('Respond Aesthetically/', views.Respond),
+    path('Prepare for Occupation/', views.Occupation),
+    path('Social Responsibility/', views.Responsibility),
+    path('Infrastructure/', views.Infrastructure),
+    path('Club/', views.Club),
+    path('Cbse/', views.Cbse),
+    path('test/', views.test),
 ]
 
 

@@ -38,6 +38,30 @@ def parent(request):
     return render (request,"parent.html")
 def admission(request):
     return render (request,"admissions.html")
+def personal(request):
+    return render (request,"Personal Growth and Development.html")
+def effective(request):
+    return render (request,"Effective Interpersonal Skills.html")
+def Communication(request):
+    return render (request,"Effective Communication Skills.html")
+def Deepened(request):
+    return render (request,"Deepened Spiritual Values.html")
+def Intellectual(request):
+    return render (request,"Intellectual Growth.html")
+def Respond(request):
+    return render (request,"Respond Aesthetically.html")
+def Occupation(request):
+    return render (request,"Prepare for Occupation.html")
+def Responsibility(request):
+    return render (request,"Social Responsibility.html")
+def Infrastructure(request):
+    return render (request,"Infrastructure.html")
+def Club(request):
+    return render (request,"Clubs.html")
+def Cbse(request):
+    return render (request,"Cbse.html")
+def test(request):
+    return render (request,"Test.html")
 
 def aboutpage(request):
     aboutimgdata = aboutimg.objects.all()[:6]

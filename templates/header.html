@@ -20,7 +20,7 @@
         <div class=" xl:flex md:block p-5 mx-auto px-8 hidden">
             <div class="text-cyan-400 flex md:w-1/3 mx-auto xl:px-6">
                 <div class="shrink-0 lg:relative mx-auto">
-                    <img src="{% static 'icons/logo.svg' %}" class="-m-6 -mb-3 w-96" alt="">
+                    <img src="{% static 'icons/logo.svg' %}" class="-m-6 -mb-3 w-96" alt="logo">
                 </div>
             </div>
             <div class="lg:flex md:block mx-auto justify-center xl:w-2/3 my-auto xl:-ml-14 xl:mr-0 -mr-4">
@@ -128,7 +128,7 @@
         <div class="md:hidden flex p-5 mx-auto ">
             <div class="text-cyan-400 flex mx-auto my-auto">
                 <div class="shrink-0 lg:relative w-60 my-auto">
-                    <img src="{% static 'icons/logo.svg' %}" class="-m-6 -mb-3" alt="">
+                    <img src="{% static 'icons/logo.svg' %}" class="-m-6 -mb-3" alt="logo">
                 </div>
             </div>
             <div class="mx-auto">
@@ -141,7 +141,7 @@
                         <div class="bars" id="bar3"></div>
                     </label>
                 </button>
-                <div class="hidden mx-auto top-0 absolute w-full left-0 bg-slate-950 z-20 py-24" id="list">
+                <div class="hidden min-h-screen mx-auto top-0 absolute w-full left-0 bg-slate-950 z-20 py-24" id="list">
                     <div class="mx-auto text-center p-12">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/"
@@ -156,10 +156,16 @@
                                 class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/about/'%} ut-2 {% endif %}">
                             </div>
                         </a>
-                        <a href="/circulars/"
-                            class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Circulars
+                        <a href="/Club/"
+                            class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Club
                             <div
-                                class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/circulars/'%} ut-2 {% endif %}">
+                                class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/Club/'%} ut-2 {% endif %}">
+                            </div>
+                        </a>
+                        <a href="/Infrastructure/"
+                            class="text-gray-300 block rounded-md px-3 py-2 text-base text-center font-medium ut-1 w-fit mx-auto">Infrastructure
+                            <div
+                                class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/Infrastructure/'%} ut-2 {% endif %}">
                             </div>
                         </a>
                         <li class=" z-50 block rounded-md py-2 text-base text-center font-medium w-fit mx-auto">
@@ -181,42 +187,75 @@
                                 <!-- Your dropdown items -->
                                 <ul class="py-2 text-sm text-gray-700 text-center"
                                     aria-labelledby="dropdownDefaultButton">
-                                    <h1 class="text-xl font-bold text-[#ffc53f]">8 POINT EDUCATIONAL PROGRAM</h1>
+                                    <h6 class="text-xl font-bold text-red-500 mx-2">8 POINT EDUCATIONAL PROGRAM</h6>
                                     <li>
-                                        <a href="www.google.com"
+                                        <a href="/Personal Growth and Development/"
                                             class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
                                             <div class="text-left text-xl py-2 text-violet-800"> Personal Growth and
                                                 Development</div>
                                         </a>
                                     </li>
-                                    <hr class="w-[90%] mx-auto my-2">
+                                    <span
+                                        class="block border-t-2 border-purple-300 w-[98%] mx-auto rounded-full"></span>
                                     <li>
-                                        <a href="www.google.com"
+                                        <a href="/Effective Interpersonal Skills/"
                                             class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
-                                            <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
-                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing
-                                                elit.
-                                                Fugiat, praesentium.</div>
+                                            <div class="text-left text-xl py-2 text-violet-800">Effective Interpersonal
+                                                Skills</div>
                                         </a>
                                     </li>
-                                    <hr class="w-[90%] mx-auto my-2">
+                                    <span
+                                        class="block border-t-2 border-purple-300 w-[98%] mx-auto rounded-full"></span>
                                     <li>
-                                        <a href="www.google.com"
+                                        <a href="/Effective Communication Skills/"
                                             class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
-                                            <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
-                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing
-                                                elit.
-                                                Fugiat, praesentium.</div>
+                                            <div class="text-left text-xl py-2 text-violet-800">Effective Communication
+                                                Skills</div>
                                         </a>
                                     </li>
-                                    <hr class="w-[90%] mx-auto my-2">
+                                    <span
+                                        class="block border-t-2 border-purple-300 w-[98%] mx-auto rounded-full"></span>
                                     <li>
-                                        <a href="www.google.com"
+                                        <a href="/Deepened Spiritual Values/"
                                             class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
-                                            <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
-                                            <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing
-                                                elit.
-                                                Fugiat, praesentium.</div>
+                                            <div class="text-left text-xl py-2 text-violet-800"> Deepened Spiritual
+                                                Values</div>
+                                        </a>
+                                    </li>
+                                    <span
+                                        class="block border-t-2 border-purple-300 w-[98%] mx-auto rounded-full"></span>
+                                    <li>
+                                        <a href="/Intellectual Growth/"
+                                            class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
+                                            <div class="text-left text-xl py-2 text-violet-800"> Intellectual Growth
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <span
+                                        class="block border-t-2 border-purple-300 w-[98%] mx-auto rounded-full"></span>
+                                    <li>
+                                        <a href="/Respond Aesthetically/"
+                                            class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
+                                            <div class="text-left text-xl py-2 text-violet-800"> Respond Aesthetically
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <span
+                                        class="block border-t-2 border-purple-300 w-[98%] mx-auto rounded-full"></span>
+                                    <li>
+                                        <a href="/Prepare for Occupation/"
+                                            class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
+                                            <div class="text-left text-xl py-2 text-violet-800"> Prepare for Occupation
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <span
+                                        class="block border-t-2 border-purple-300 w-[98%] mx-auto rounded-full"></span>
+                                    <li>
+                                        <a href="/Social Responsibility/"
+                                            class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
+                                            <div class="text-left text-xl py-2 text-violet-800"> Social Responsibility
+                                            </div>
                                         </a>
                                     </li>
                                 </ul>
@@ -278,9 +317,16 @@
                         </div>
                     </li>
                     <li class="p-2 text-xl font-medium block ut-1">
-                        <a href="/circulars/" class="text-decoration-none"><span class="home">Circulars</span></a>
+                        <a href="/Club/" class="text-decoration-none"><span class="home">Club</span></a>
                         <div
-                            class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/circulars/'%} ut-2 {% endif %}">
+                            class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/Club/'%} ut-2 {% endif %}">
+                        </div>
+                    </li>
+                    <li class="p-2 text-xl font-medium block ut-1">
+                        <a href="/Infrastructure/" class="text-decoration-none"><span
+                                class="home">Infrastructure</span></a>
+                        <div
+                            class="w-full h-2 bg-[#FBDE9B] rounded-full {% if request.path != '/Infrastructure/'%} ut-2 {% endif %}">
                         </div>
                     </li>
                     <li class="p-2 text-xl font-medium block ut-1">
@@ -301,29 +347,68 @@
                         <!-- Dropdown menu -->
                         <div id="dropdown"
                             class="z-50 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-72 px-4 py-2">
-                            <ul class="py-2 text-sm text-gray-700 text-center" aria-labelledby="dropdownDefaultButton">
-                                <h1 class="text-xl font-bold text-[#ffc53f]">8 POINT EDUCATIONAL PROGRAM</h1>
+                            <ul class="py-2 text-sm text-gray-700 text-center overflow-y-auto max-h-max"
+                                aria-labelledby="dropdownDefaultButton">
+                                <h6 class="text-xl font-bold text-red-500 py-2">8 POINT EDUCATIONAL PROGRAM</h6>
+                                <hr class="w-[90%] mx-auto my-2">
                                 <li>
-                                    <a href="www.google.com" class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
-                                        <div class="text-left text-xl py-2 text-violet-800"> Personal Growth and
+                                    <a href="/Personal Growth and Development/"
+                                        class="block px-4 py-1 hover:bg-violet-100 rounded-xl ">
+                                        <div class="text-left text-xl text-violet-800"> Personal Growth and
                                             Development</div>
                                         <!-- <div class="text-left">Child Growth and Development examines the physical, cognitive, social, and emotional growth...</div>{ my_variable|characterlimit:20 } -->
                                     </a>
                                 </li>
                                 <hr class="w-[90%] mx-auto my-2">
                                 <li>
-                                    <a href="www.google.com" class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
-                                        <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
-                                        <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                            Fugiat, praesentium.</div>
+                                    <a href="/Effective Interpersonal Skills/"
+                                        class="block px-4 py-1 hover:bg-violet-100 rounded-xl ">
+                                        <div class="text-left text-xl text-violet-800 "> Effective Interpersonal
+                                            Skills</div>
                                     </a>
                                 </li>
                                 <hr class="w-[90%] mx-auto my-2">
                                 <li>
-                                    <a href="www.google.com" class="block px-4 py-2 hover:bg-violet-100 rounded-xl ">
-                                        <div class="text-left text-xl py-2 text-violet-800"> Elementry School</div>
-                                        <div class="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                            Fugiat, praesentium.</div>
+                                    <a href="/Effective Communication Skills/"
+                                        class="block px-4 py-1 hover:bg-violet-100 rounded-xl ">
+                                        <div class="text-left text-xl text-violet-800 "> Effective Communication
+                                            Skills</div>
+                                    </a>
+                                </li>
+                                <hr class="w-[90%] mx-auto my-2">
+                                <li>
+                                    <a href="/Deepened Spiritual Values/"
+                                        class="block px-4 py-1 hover:bg-violet-100 rounded-xl ">
+                                        <div class="text-left text-xl text-violet-800">Deepened Spiritual Values
+                                        </div>
+                                    </a>
+                                </li>
+                                <hr class="w-[90%] mx-auto my-2">
+                                <li>
+                                    <a href="/Intellectual Growth/"
+                                        class="block px-4 py-1 hover:bg-violet-100 rounded-xl ">
+                                        <div class="text-left text-xl text-violet-800">Intellectual Growth</div>
+                                    </a>
+                                </li>
+                                <hr class="w-[90%] mx-auto my-2">
+                                <li>
+                                    <a href="/Respond Aesthetically/"
+                                        class="block px-4 py-1 hover:bg-violet-100 rounded-xl ">
+                                        <div class="text-left text-xl text-violet-800">Respond Aesthetically</div>
+                                    </a>
+                                </li>
+                                <hr class="w-[90%] mx-auto my-2">
+                                <li>
+                                    <a href="/Prepare for Occupation/"
+                                        class="block px-4 py-1 hover:bg-violet-100 rounded-xl ">
+                                        <div class="text-left text-xl text-violet-800">Prepare for Occupation</div>
+                                    </a>
+                                </li>
+                                <hr class="w-[90%] mx-auto my-2">
+                                <li>
+                                    <a href="/Social Responsibility/"
+                                        class="block px-4 py-1 hover:bg-violet-100 rounded-xl ">
+                                        <div class="text-left text-xl text-violet-800">Social Responsibility</div>
                                     </a>
                                 </li>
                             </ul>
@@ -356,7 +441,6 @@
                         Admissions
                     </div>
                 </a>
-
             </div>
             <!-- <div class=" p-4 px-8 bg-[#F6C663] rounded-full text-lg font-medium text-center my-auto hover:bg-[#F9BC3E]">
                 Enroll Today
