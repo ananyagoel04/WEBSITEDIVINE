@@ -37,11 +37,11 @@
         </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6 gap-4 bg-[#f3f0fc]">
-        <!-- {% for img_data in aboutimg %}
+        {% for img_data in aboutimg %}
         <div class="flex justify-center items-center">
             <img src="{{ img_data.url }}" alt="{{ img_data.title }}" class="w-full aspect-square h-auto rounded-md">
         </div>
-        {% endfor %} -->
+        {% endfor %}
     </div>
 
     <div class="bg-[#f3f0fc] xl:px-64 px-10 justify-start text-2xl">
@@ -96,7 +96,7 @@
                 class="relative z-10 mx-auto rounded-lg" />
         </div>
 
-        <div class="block mx-auto my-auto md:w-1/2 p-8">
+        <div class="block mx-auto my-auto z-50 md:w-1/2 p-8">
             <div
                 class="bg-[#D2C6FA] rounded-3xl w-fit my-4 p-2 text-center text-[#4F49A5] font-semibold rotate-[-1deg]">
                 Chairman's Message
@@ -112,7 +112,7 @@
             </div>
         </div>
 
-        <div class="mx-auto my-auto md:w-1/2 max-w-lg md:relative hidden md:block">
+        <div class="mx-auto my-auto md:w-1/2 max-w-lg z-10 md:relative hidden md:block">
             <!-- <img src="{% static 'icons/dots.svg' %}" alt="" class="w-48 top-16 relative z-40" /> -->
             <img src="{% static 'icons/circle.svg' %}" alt="" class="absolute inset-0 w-full h-full scale-125" />
             <img src="https://divinewisdom.edu.in/images/chrmn.jpg"
@@ -133,7 +133,7 @@
             <img src="{% static 'icons/home-blocks-02.jpg' %}"
                 class="mx-auto my-auto relative z-10 w-96 h-96 rounded-3xl" alt="" />
         </div>
-        <div class="block mx-auto my-auto md:w-1/2 p-8">
+        <div class="block mx-auto my-auto z-50 md:w-1/2 p-8">
             <div
                 class="bg-[#D2C6FA] rounded-3xl w-fit my-4 p-2 text-center text-[#4F49A5] font-semibold rotate-[-1deg]">
                 Director's Message
@@ -158,7 +158,7 @@
                 class="relative z-10 mx-auto rounded-lg" />
         </div>
 
-        <div class="block mx-auto my-auto md:w-1/2 p-8">
+        <div class="block mx-auto my-auto md:w-1/2 z-50 p-8">
             <div
                 class="bg-[#D2C6FA] rounded-3xl w-fit my-4 p-2 text-center text-[#4F49A5] font-semibold rotate-[-1deg]">
                 Principal's Message
@@ -442,13 +442,6 @@
 
 
     {% include "logo.html" %}
-
-
-
-
-
-
-
 
 
     {% include "Footer.html" %}

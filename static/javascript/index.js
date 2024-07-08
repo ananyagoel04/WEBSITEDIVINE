@@ -10,29 +10,46 @@ button1.addEventListener("click", function () {
 
 
 
-//transition to rotate arrow on dropdown
-const dropdownButton2 = document.getElementById('dropdownDefaultButton');
-const arrowSvg = document.getElementById('arrow');
+// Function to toggle dropdown visibility and rotate arrow
+function toggleDropdownAndRotate(buttonId, arrowId, dropdownId) {
+    const dropdownButton = document.getElementById(buttonId);
+    const arrowSvg = document.getElementById(arrowId);
+    const dropdown = document.getElementById(dropdownId);
 
-dropdownButton2.addEventListener('click', function (event) {
-    event.stopPropagation();
-    arrowSvg.classList.toggle('rotate');
-    setTimeout(() => {
-        arrowSvg.classList.remove('no-rotate');
-    }, 300); // Adjust to match the transition duration
-});
+    dropdownButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent event bubbling
 
-// Event listener on the document body to detect clicks outside the button
-document.body.addEventListener('click', function (event) {
-    if (event.target !== dropdownButton2) {
-        arrowSvg.classList.remove('rotate');
-        arrowSvg.classList.add('no-rotate');
-        // Remove the 'no-rotate' class after the transition completes
+        // Toggle dropdown visibility
+        dropdown.classList.toggle('hidden');
+
+        // Toggle arrow rotation
+        arrowSvg.classList.toggle('rotate');
         setTimeout(() => {
             arrowSvg.classList.remove('no-rotate');
         }, 300); // Adjust to match the transition duration
-    }
-});
+    });
+
+    // Event listener on the document body to detect clicks outside the button
+    document.body.addEventListener('click', function(event) {
+        if (!dropdownButton.contains(event.target)) {
+            // Click outside dropdown button, close dropdown and reset arrow
+            dropdown.classList.add('hidden');
+
+            arrowSvg.classList.remove('rotate');
+            arrowSvg.classList.add('no-rotate');
+            setTimeout(() => {
+                arrowSvg.classList.remove('no-rotate');
+            }, 300); // Adjust to match the transition duration
+        }
+    });
+}
+
+// Initialize for each dropdown button and arrow
+toggleDropdownAndRotate('dropdownDefaultButton', 'arrow', 'dropdown');
+toggleDropdownAndRotate('dropdownDefaultButton1', 'arrow1', 'dropdown1');
+toggleDropdownAndRotate('dropdownDefaultButton2', 'arrow3', 'dropdown2');
+
+
 
 
 
