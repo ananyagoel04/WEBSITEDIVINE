@@ -3,9 +3,12 @@ from gallery.models import Gallery, maingallery
 from django.shortcuts import render,redirect
 from about.models import aboutimg, about
 from django.core.mail import send_mail, EmailMessage
+from TC.models import Session, Class
 
 
-
+def test_view(request):
+    sessions = Session.objects.order_by('session_name')
+    return render(request, 'Tc.html', {'sessions': sessions})
 
 
 def send_form_data_email(name, email, phone, resume, message):

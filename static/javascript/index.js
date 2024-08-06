@@ -48,6 +48,7 @@ function toggleDropdownAndRotate(buttonId, arrowId, dropdownId) {
 toggleDropdownAndRotate('dropdownDefaultButton', 'arrow', 'dropdown');
 toggleDropdownAndRotate('dropdownDefaultButton1', 'arrow1', 'dropdown1');
 toggleDropdownAndRotate('dropdownDefaultButton2', 'arrow3', 'dropdown2');
+toggleDropdownAndRotate('dropdownDefaultButton3', 'arrow4', 'dropdown3');
 
 
 

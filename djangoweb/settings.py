@@ -61,6 +61,8 @@ INSTALLED_APPS = [
     'about',
     'cloudinary',
     'cloudinary_storage',
+    'TC',
+    'djongo',
 ]
 
 MIDDLEWARE = [
