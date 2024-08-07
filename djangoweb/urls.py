@@ -43,7 +43,8 @@ urlpatterns = [
     path('Infrastructure/', views.Infrastructure),
     path('Club/', views.Club),
     path('Cbse/', views.Cbse),
-    path('Tc/', views.test_view, name='test_view'),
+    path('Tc/', views.Tc,),
+    path('classes/<int:class_id>/students/', views.class_students, name='class_students'),
 ]
 
 

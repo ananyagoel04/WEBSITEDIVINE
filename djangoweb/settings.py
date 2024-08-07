@@ -63,7 +63,21 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'TC',
     'djongo',
+    'Parents',
 ]
+
+
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': 'link image code',
+    'toolbar': 'undo redo | formatselect | bold italic backcolor | link image | code',
+    'menubar': 'file edit view insert format tools table help',
+    'toolbar_mode': 'floating',
+}
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

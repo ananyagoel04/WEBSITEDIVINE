@@ -1,12 +1,26 @@
 from django.http import HttpResponse,HttpResponseRedirect
-from gallery.models import Gallery, maingallery
 from django.shortcuts import render,redirect
-from about.models import aboutimg, about
 from django.core.mail import send_mail, EmailMessage
-from TC.models import Session, Class
+from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
+from gallery.models import Gallery, maingallery
+from about.models import aboutimg, about
+from TC.models import Session, Class, Student
+from Parents.models import Event, News
 
 
-def test_view(request):
+
+def class_students(request, class_id):
+    # Get the class object based on class_id
+    class_obj = get_object_or_404(Class, id=class_id)
+    # Get all students in this class
+    students = Student.objects.filter(class_obj=class_obj)
+    
+    # Render the template with the class and students data
+    return render(request, 'class_students.html', {'class_obj': class_obj, 'students': students})
+
+
+def Tc(request):
     sessions = Session.objects.order_by('session_name')
     return render(request, 'Tc.html', {'sessions': sessions})
 
@@ -38,7 +52,27 @@ def home(request):
 def logo(request):
     return render (request,"logo.html")
 def parent(request):
-    return render (request,"parent.html")
+    today = timezone.now().date()
+    events = Event.objects.filter(date__gte=today).order_by('date')[:4]
+    colors = ["#FDEECD", "#EAE1FC", "#FFEBEC", "#EAFDF7"]
+    Newses = News.objects.all()
+    
+    colored_events = [
+        {
+            'event': event,
+            'color': colors[i % len(colors)]
+        }
+        for i, event in enumerate(events)
+    ]
+    
+    context = {
+        'colored_events': colored_events,
+        'newses': Newses,
+    }
+    return render(request, "parent.html", context)
+
+
+
 def admission(request):
     return render (request,"admissions.html")
 def personal(request):

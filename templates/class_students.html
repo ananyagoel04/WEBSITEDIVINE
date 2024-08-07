@@ -1,0 +1,58 @@
+{% load static %}
+{% include "header.html" %}
+{% block content %}
+
+<head>
+    <style>
+        .background {
+            background-color: #f3f0fc;
+        }
+    </style>
+</head>
+
+<!-- Gradient -->
+<div class="bg-gradient-to-b from-[#f3f0fc] from-0% to-[#ffffff] to-100% h-8">
+</div>
+<!-- Gradient End -->
+
+<body>
+    <h1 class="text-center font-bold text-yellow-500 text-3xl">
+        Transfer Certificates of {{ class_obj.class_name }} ({{ class_obj.session.session_name }})
+    </h1>
+    <h1 class="text-center font-medium text-xl w-full"><a href="/Tc/" > <i class="fa fa-angle-left my-auto" style="font-size:24px"></i>&nbsp;Back</a></h1>
+
+    <div class="flex justify-center mt-10 px-10 my-10">
+        <table class="min-w-full shadow-md">
+            <thead>
+                <tr class="bg-[#FFEBEC]">
+                    <th class=" px-4 py-2 text-center">Student Name</th>
+                    <th class=" px-4 py-2 text-center">PDF</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr class="even:bg-[#FFEBEC] odd:bg-[#EAFDF7]">
+                    <td class=" px-4 py-2 text-center">{{ student.student_name }}</td>
+                    {% if student.TC %}
+                    <td class=" px-4 py-2 text-center">
+                        <a href="{{ student.TC.url }}" target="_blank"> <span class="px-2">View</span><i
+                                class="fa fa-file-pdf-o" style="font-size:24px;color:red"></i></a>
+                    </td>
+                    {% endif %}
+                </tr>
+                {% empty %}
+                <tr class="even:bg-[#FFEBEC] odd:bg-[#EAFDF7]">
+                    <td class=" px-4 py-2 text-center">No student available</td>
+                    <td class=" px-4 py-2 text-center">--</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+
+
+</body>
+
+{% include "Footer.html" %}
+{% endblock %}

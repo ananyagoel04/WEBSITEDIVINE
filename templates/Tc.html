@@ -28,7 +28,7 @@
     <li class="z-50 block rounded-md py-2 text-base text-center font-medium w-fit mx-auto">
         <button id="dropdownButton1{{ forloop.counter }}" data-collapse-toggle="dropdownContent1{{ forloop.counter }}"
             type="button" aria-controls="dropdownContent1{{ forloop.counter }}" aria-expanded="false" class="ut-1">
-            <div class="flex mx-auto px-3"> Session : {{ session.session_name }}
+            <div class="flex mx-auto px-3"> {{ session.session_name }}
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="mt-0.5">
@@ -41,7 +41,7 @@
             <ul class="py-2 text-sm text-gray-700 text-center">
                 {% for cls in session.class_set.all %}
                 <li>
-                    <a href="/Infrastructure/" class="block px-4 py-2 hover:bg-violet-100 rounded-xl">
+                    <a href="{% url 'class_students' cls.id %}" class="block px-4 py-2 hover:bg-violet-100 rounded-xl">
                         <div class="text-center text-xl py-2 text-violet-800"> {{ cls.class_name }}</div>
                     </a>
                 </li>
