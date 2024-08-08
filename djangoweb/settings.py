@@ -64,6 +64,8 @@ INSTALLED_APPS = [
     'TC',
     'djongo',
     'Parents',
+    'home',
+
 ]
 
 

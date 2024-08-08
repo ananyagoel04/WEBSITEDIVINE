@@ -7,6 +7,7 @@ from gallery.models import Gallery, maingallery
 from about.models import aboutimg, about
 from TC.models import Session, Class, Student
 from Parents.models import Event, News
+from home.models import Homeimg, VisionMission, Environment, Teacher, Program, Review
 
 
 
@@ -47,8 +48,24 @@ def send_form_data_email(name, email, phone, resume, message):
 
 
 def home(request):
-    # send_email_example()
-    return render (request,"index.html")
+    # Fetching data from the models
+    homeimg = Homeimg.objects.first()  # Assuming only one Homeimg entry
+    vision_mission = VisionMission.objects.all()[:2]
+    environment = Environment.objects.all()[:2]
+    teachers = Teacher.objects.all()[:4]
+    programs = Program.objects.all()  # Assuming multiple Program entries
+    reviews = Review.objects.all()  # Assuming multiple Review entries
+
+    # Passing data to the template
+    context = {
+        'homeimg': homeimg,
+        'vision_mission': vision_mission,
+        'environment': environment,
+        'teachers': teachers,
+        'programs': programs,
+        'reviews': reviews,
+    }
+    return render (request,"index.html",context)
 def logo(request):
     return render (request,"logo.html")
 def parent(request):

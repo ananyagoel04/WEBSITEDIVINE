@@ -1,4 +1,5 @@
 {% load static %}
+{% block content %}
 {% include "header.html" %}
 <!DOCTYPE html>
 
@@ -150,12 +151,12 @@
                 </div>
             </div>
         </div>
+
         <div class="mx-auto my-auto md:w-2/4" data-aos="fade-up">
             <!-- <img src="{% static 'icons/home-blocks-01.jpg' %}" class="w-fit mx-auto max-h-96 rounded-xl" alt=""> -->
-            <img src="{% static 'icons/image.png' %}" class="w-fit mx-auto aspect-auto rounded-xl"
-                alt="front elevation">
+            <img src="{{ homeimg.image.url }}" class="w-fit mx-auto aspect-auto rounded-xl"
+                alt="{{ homeimg.image_title }}">
         </div>
-
 
         <div class="block mt-4 uppercase md:hidden w-fit mx-auto" data-aos="fade-up">
             <div class="font-semibold my-4 text-center">Rated 5 stars by over <span class="text-purple-900 ">100
@@ -334,10 +335,14 @@
             <div data-aos="fade-up" class=" mx-auto my-auto max-w-lg md:px-6 px-10 md:w-1/2 flex-shrink-0">
                 <!-- <img src="{% static 'icons//Group 1.svg' %}" class="mx-auto my-auto" alt="students"> -->
                 <div class="mx-auto w-full lg:pl-4">
-                    <img src="{% static 'icons/pic3.jpeg' %}" alt="Image 1"
+                    {% if vision_mission.0 %}
+                    <img src="{{ vision_mission.0.image.url }}" alt="{{ vision_mission.0.image_title}}"
                         class="w-[300px] h-[400px] ml-[100px] rounded-2xl">
-                    <img src="{% static 'icons/pic3.jpeg' %}" alt="Image 2"
+                    {% endif %}
+                    {% if vision_mission.1 %}
+                    <img src="{{ vision_mission.1.image.url }}" alt="{{ vision_mission.1.image_title}}"
                         class="w-[200px] h-[200px] rounded-2xl -mt-[100px]">
+                    {% endif %}
                 </div>
             </div>
             <div data-aos="fade-up" class="block p-6 mx-auto my-auto md:w-1/2">
@@ -360,7 +365,7 @@
                         Century.</span>
 
                 </p>
-                <div class="flex py-4 animation-arrow w-fit">
+                <!-- <div class="flex py-4 animation-arrow w-fit">
                     <div class="bg-[#4F49A5] flex rounded-full text-center text-xl px-4 py-2 text-white">
                         <div>Learn more</div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -371,7 +376,7 @@
                             <path d="M15 8l4 4"></path>
                         </svg>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -382,10 +387,14 @@
         <div class="md:flex p-4 block my-12">
             <div data-aos="fade-up" class=" mx-auto my-auto md:w-1/2 max-w-lg md:hidden">
                 <div class="mx-auto w-full p-8">
-                    <img src="{% static 'icons/pic3.jpeg' %}" alt="Image 1"
+                    {% if environment.0 %}
+                    <img src="{{ environment.0.image.url }}" alt="{{ environment.0.image_title}}"
                         class="w-[300px] h-[400px] ml-[100px] rounded-2xl">
-                    <img src="{% static 'icons/pic3.jpeg' %}" alt="Image 2"
+                    {% endif %}
+                    {% if environment.1 %}
+                    <img src="{{ environment.1.image.url }}" alt="{{ environment.1.image_title}}"
                         class="w-[200px] h-[200px] rounded-2xl -mt-[100px]">
+                    {% endif %}
                 </div>
             </div>
 
@@ -406,8 +415,7 @@
                             src="{% static 'icons/tick.svg' %}">
                         <div>
                             <h3 class="font-bold">Advanced Infrastructure</h3>
-                            <p>A conducive environment for students to learn new dimensions of learning <a href=""
-                                    class="hover:text-red-500"> ___read more</a></p>
+                            <p>A conducive environment for students to learn new dimensions of learning</p>
                         </div>
                     </div>
 
@@ -458,7 +466,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex py-4 animation-arrow w-fit">
+                <!-- <div class="flex py-4 animation-arrow w-fit">
                     <div data-modal-target="default-modal" data-modal-toggle="default-modal"
                         class="bg-[#4F49A5] flex rounded-full text-center cursor-pointer text-white text-xl px-4 py-2">
                         <div>Learn more</div>
@@ -470,15 +478,19 @@
                             <path d="M15 8l4 4"></path>
                         </svg>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div data-aos="fade-up" class=" mx-auto my-auto md:w-1/2 max-w-lg flex-shrink-0 hidden md:flex">
                 <div class="mx-auto w-full ml-12">
-                    <img src="{% static 'icons/pic3.jpeg' %}" alt="Image 1"
+                    {% if environment.0 %}
+                    <img src="{{ environment.0.image.url }}" alt="{{ environment.0.image_title}}"
                         class="w-[300px] h-[400px] ml-[100px] rounded-2xl">
-                    <img src="{% static 'icons/pic3.jpeg' %}" alt="Image 2"
+                    {% endif %}
+                    {% if environment.1 %}
+                    <img src="{{ environment.1.image.url }}" alt="{{ environment.1.image_title}}"
                         class="w-[200px] h-[200px] rounded-2xl -mt-[100px]">
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -547,50 +559,58 @@
 
     <div class="lg:flex p-4 block mt-16">
         <div data-aos="fade-up" class="mx-auto my-auto lg:w-1/2 sm:grid grid-cols-2 block">
+            {% if teachers.0 %}
             <div class="flex-row">
                 <div>
-                    <img src="{% static 'icons/pic2.jpeg' %}"
+                    <img src="{{ teachers.0.image.url }}"
                         class="mx-auto my-auto rounded-2xl h-72 xl:h-96 xl:w-72 lg:w-56 md:w-72 w-full sm:w-64"
-                        alt="students">
+                        alt="{{ teachers.0.image_title}}">
                 </div>
                 <div class="text-center">
-                    <div>Name Of teachers</div>
-                    <div>Designation with degree</div>
+                    <div>{{ teachers.0.name}}</div>
+                    <div>{{ teachers.0.designation}}</div>
                 </div>
             </div>
+            {% endif %}
+            {% if teachers.1 %}
             <div class="flex-row">
                 <div>
-                    <img src="{% static 'icons/pic.webp' %}"
+                    <img src="{{ teachers.1.image.url }}"
                         class="mx-auto my-auto rounded-2xl h-80 xl:h-96 xl:w-72 lg:w-56 md:w-72 w-full sm:w-64 sm:mt-12"
-                        alt="students">
+                        alt="{{ teachers.1.image_title}}">
                 </div>
                 <div class="text-center">
-                    <div>Name Of teachers</div>
-                    <div>Designation with degree</div>
+                    <div>{{ teachers.1.name}}</div>
+                    <div>{{ teachers.1.designation}}</div>
                 </div>
             </div>
+            {% endif %}
+            {% if teachers.2 %}
             <div class="flex-row">
                 <div>
-                    <img src="{% static 'icons/pic3.jpeg' %}"
+                    <img src="{{ teachers.2.image.url }}"
                         class="mx-auto my-auto rounded-2xl h-80 xl:h-96 xl:w-72 lg:w-56 md:w-72 w-full sm:w-64"
-                        alt="students">
+                        alt="{{ teachers.2.image_title}}">
                 </div>
                 <div class="text-center">
-                    <div>Name Of teachers</div>
-                    <div>Designation with degree</div>
+                    <div>{{ teachers.2.name}}</div>
+                    <div>{{ teachers.2.designation}}</div>
                 </div>
             </div>
+            {% endif %}
+            {% if teachers.3 %}
             <div class="flex-row">
                 <div>
-                    <img src="{% static 'icons/pic4.jpeg' %}"
+                    <img src="{{ teachers.3.image.url }}"
                         class="mx-auto my-auto rounded-2xl h-80 xl:h-96 xl:w-72 lg:w-56 md:w-72 w-full sm:w-64 sm:mt-12"
-                        alt="students">
+                        alt="{{ teachers.3.image_title}}">
                 </div>
                 <div class="text-center">
-                    <div>Name Of teachers</div>
-                    <div>Designation with degree</div>
+                    <div>{{ teachers.3.name}}</div>
+                    <div>{{ teachers.3.designation}}</div>
                 </div>
             </div>
+            {% endif %}
         </div>
         <div data-aos="fade-up" class="block md:p-6 mx-auto my-auto lg:w-1/2">
             <div
@@ -972,6 +992,8 @@
         </span>
     </div> -->
     {% include "Footer.html" %}
+
+    {% endblock %}
 </body>
 
 </html>
