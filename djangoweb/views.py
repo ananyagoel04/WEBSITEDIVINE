@@ -49,7 +49,7 @@ def send_form_data_email(name, email, phone, resume, message):
 
 def home(request):
     # Fetching data from the models
-    homeimg = Homeimg.objects.first()  # Assuming only one Homeimg entry
+    homeimg = Homeimg.objects.first()
     vision_mission = VisionMission.objects.all()[:2]
     environment = Environment.objects.all()[:2]
     teachers = Teacher.objects.all()[:4]
