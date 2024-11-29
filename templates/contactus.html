@@ -39,14 +39,18 @@
             <img class="md:w-32 w-16 relative md:-bottom-24 -bottom-12  md:left-14 left-60"
                 src="/static/icons/dots1.svg" alt="">
             <div class="flex justify-center w-full relative h-fit ">
+
                 <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkForm()"
                     class=" bg-white shadow-2xl w-full z-10 p-10 md:px-14 border-2 rounded-2xl">
                     {% csrf_token %}
+                    <div class="text-red-500 text-center mt-4 ">Currently Unavailable <br> Please contact us on <a
+                            class="underline" href="tel:1704298187">91+ 17042-98187 </a></div>
                     <div class="text-3xl font-bold text-center md:text-left">Send us a message</div>
                     <br>
                     <label for="">Name*</label>
                     <br>
-                    <input type="text" placeholder='Name' required name="Name" class="border-2 p-2 rounded-xl w-full h-10">
+                    <input type="text" placeholder='Name' required name="Name"
+                        class="border-2 p-2 rounded-xl w-full h-10">
                     <br>
                     <label for="">Email*</label>
                     <br>
@@ -55,7 +59,7 @@
                     <br>
                     <label for="">Phone</label>
                     <br>
-                    <input type="number" placeholder='Phone Number' name="Phone" required maxlength="10"
+                    <input type="tel" placeholder="Phone Number" name="Phone" required maxlength="10"
                         class="border-2 p-2 rounded-xl w-full h-10">
                     <br>
                     <label for="">Message</label>
@@ -80,7 +84,6 @@
                             var name = document.getElementsByName("Name")[0].value;
                             var email = document.getElementsByName("Email")[0].value;
                             var phone = document.getElementsByName("Phone")[0].value;
-                            var resume = document.getElementsByName("Resume")[0].files[0];
 
                             var errorMessage = document.getElementById("error-message");
                             var successMessage = document.getElementById("success-message");
@@ -198,14 +201,7 @@
         </div>
     </div>
 
-
-
-
     <div>{% include "logo.html" %}</div>
-
-
-
-
 
     <div>
         {% include "Footer.html" %}
